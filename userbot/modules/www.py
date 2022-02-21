@@ -16,7 +16,7 @@ from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, DEVS, StartTime
 from userbot.events import register
 from userbot.utils import lepin_cmd
-from userbot import CMD_HANDLER as cmd
+
 absen = [
     "**Lepin Dateng Hormat**",
     "**Hadir Lepin** 🥵",
@@ -234,7 +234,7 @@ def speed_convert(size):
     """
     Hi human, you can't read bytes?
     """
-    power = 2 ** 10
+    power = 2**10
     zero = 0
     units = {0: "", 1: "Kb/s", 2: "Mb/s", 3: "Gb/s", 4: "Tb/s"}
     while size > power:

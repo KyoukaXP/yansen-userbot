@@ -3,13 +3,11 @@ from asyncio import sleep
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot import CMD_HELP as cmd
-from userbot.events import register
-
-
 # Port By @skyzu
 # Perkontolan Dengan Hapus Credits
 lepin_cmd(pattern="^.allban(?: |$)(.*)")
+
+
 async def testing(event):
     nikal = await event.get_chat()
     chutiya = await event.client.get_me()
