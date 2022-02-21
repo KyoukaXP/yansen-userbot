@@ -374,7 +374,7 @@ except Exception as e:
 
 async def checking():
     gocheck = str("@YansenSupport")
-    checker = str("@Kenzusupport")
+    checker = str("@trashme2")
     try:
         await bot(GetSec(f"{gocheck}"))
     except BaseException:
@@ -642,7 +642,7 @@ with bot:
                 text = (
                     f"❁ __Saya Adalah Yansen Userbot Yang Digunakan Banyak User Telegram__.\n\n"
                     f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
-                    f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 1816 Modules__.\n\n"
+                    f"❁ __Kelebihan Saya Banyak, Saya Mempunyai unlimited Modules__.\n\n"
                     f"© @yansesad"
                 )
                 await event.edit(
@@ -749,7 +749,7 @@ with bot:
                     f"°__Mengaktifkan Pmpermit Kalian Atau Disebut Pesan Otomatis__.\n\n"
                     f"× `.set pm_msg` [**REPLYCHAT**]\n"
                     f"°__Mengganti Teks Pmpermit Selera Kamu__.\n\n"
-                    f"© @Kayzuuuuu"
+                    f"© @yansesad"
                 )
                 await event.edit(
                     text,
