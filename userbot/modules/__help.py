@@ -1,14 +1,14 @@
 import logging
 
 from userbot import BOT_USERNAME
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
 )
 
 
-@skyzu_cmd(pattern="helpme")
+@lepin_cmd(pattern="helpme")
 async def yardim(event):
     try:
         tgbotusername = BOT_USERNAME
