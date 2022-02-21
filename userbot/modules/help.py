@@ -11,7 +11,7 @@ from platform import uname
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 modules = CMD_HELP
 
@@ -20,7 +20,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@skyzu_cmd(pattern="help(?: |$)(.*)")
+@lepin_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     """For .help command,"""
     args = event.pattern_match.group(1).lower()
@@ -37,10 +37,10 @@ async def help(event):
             string += "`" + str(i)
             string += "`\t ❉  "
         await event.edit(
-            "**⚡𝐒𝐊𝐘𝐙𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓​⚡**\n\n"
+            "**💥YANSEN - USERBOT​💥**\n\n"
             f"**◉ Bᴏᴛ ᴏꜰ {DEFAULTUSER}**\n**◉ Mᴏᴅᴜʟᴇꜱ : {len(modules)}**\n\n"
             "**• Mᴀɪɴ Mᴇɴᴜ :**\n"
-            f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `{cmd}help animasi`\n✐  support : @skyzusupport"
+            f"◉ {string}◉\n\n✐ **ɴᴏᴛᴇꜱ :**  `{cmd}help animasi`\n✐  support : @YansenSupport"
         )
         await asyncio.sleep(1000)
         await event.delete()
