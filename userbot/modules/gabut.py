@@ -4,14 +4,14 @@ from time import sleep
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, WEATHER_DEFCITY
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@skyzu_cmd(pattern="g(?: |$)(.*)")
+@lepin_cmd(pattern="g(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(f"**JAKA SEMBUNG BAWA GOLOK**")
@@ -22,7 +22,7 @@ async def typewriter(typew):
 # Pantun
 
 
-@skyzu_cmd(pattern="p(?: |$)(.*)")
+@lepin_cmd(pattern="p(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Salam Dulu Biar Sopan...`")
@@ -33,7 +33,7 @@ async def typewriter(typew):
 # Salam
 
 
-@skyzu_cmd(pattern="l(?: |$)(.*)")
+@lepin_cmd(pattern="l(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Kalo Orang Salam Itu Dijawab...`")
@@ -44,7 +44,7 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
-@skyzu_cmd(pattern="kenalin(?: |$)(.*)")
+@lepin_cmd(pattern="kenalin(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("☑️ `putra wibu`")
@@ -68,14 +68,14 @@ async def typewriter(typew):
     await typew.edit("✅ `xxinu Autis`")
     sleep(1)
     await typew.edit(
-        "`⚡ Cuma Skyzu Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`"
+        "`⚡ Cuma Lepin Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`"
     )
 
 
 # King Userbot Support
 
 
-@skyzu_cmd(pattern="istigfar(?: |$)(.*)")
+@lepin_cmd(pattern="istigfar(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Heh Kamu Gaboleh Begitu...`")
@@ -86,7 +86,7 @@ async def perkenalan(event):
 # Istigfar
 
 
-@skyzu_cmd(pattern="virtual(?: |$)(.*)")
+@lepin_cmd(pattern="virtual(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**OOOO**")
@@ -108,7 +108,7 @@ async def typewriter(typew):
     await typew.edit("**KASIAN MANA MASIH MUDA**")
 
 
-@skyzu_cmd(pattern="perkenalkan(?: |$)(.*)")
+@lepin_cmd(pattern="perkenalkan(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Hai Guys , Perkenalkan Nama Gw {DEFAULTUSER}`")
@@ -123,27 +123,27 @@ async def perkenalan(event):
 # Perkenalan
 
 
-@skyzu_cmd(pattern="skyzu(?: |$)(.*)")
+@lepin_cmd(pattern="skyzu(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("**Ehh Lu Mau Tau Gak?**")
     sleep(1)
-    await typew.edit("**Sih Skyzu mukanya mirip babi😂**")
+    await typew.edit("**Sih Lepin mukanya mirip babi😂**")
     sleep(1)
     await typew.edit("**Ehh Gak Bercanda Deh😁**")
     sleep(1)
-    await typew.edit("**Emang Bener Sih Skyzu Mukanya Kaya Babi🙈**")
+    await typew.edit("**Emang Bener Sih Lepin Mukanya Kaya Babi🙈**")
     sleep(1)
-    await typew.edit("**Ehh Engga Deh,Skyzu Kan Ganteng Kaya Artis Korea😄**")
+    await typew.edit("**Ehh Engga Deh,Lepin Kan Ganteng Kaya Artis Korea😄**")
     sleep(1)
     await typew.edit("**Tapi Boong😂**")
     sleep(1)
     await typew.edit("**HAHAHAHAHAHAHA**")
     sleep(1)
-    await typew.edit("**Udah Ahh Takut Skyzu Nangis Minta Balon😂**")
+    await typew.edit("**Udah Ahh Takut Lepin Nangis Minta Balon😂**")
     sleep(1)
-    await typew.edit("**Maaf Ya Skyzu Ganteng Bercanda😁**")
+    await typew.edit("**Maaf Ya Lepin Ganteng Bercanda😁**")
     sleep(1)
     await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
 
