@@ -74,13 +74,13 @@ if CONFIG_CHECK:
 
 # KALO NGEFORK/CLONE ID DEVS NYA GA USAH DI HAPUS YA KONTOLLLL 😡
 DEVS = (
-    2004395661, #lepin
-    2014359828, #kentu
-    5259987566, #dappa
-    1972682280, #bedul
-    2122261901, #kyura
-    5090127753, #oura
-    1731365899, #briankontol
+    2004395661,  # lepin
+    2014359828,  # kentu
+    5259987566,  # dappa
+    1972682280,  # bedul
+    2122261901,  # kyura
+    5090127753,  # oura
+    1731365899,  # briankontol
 )
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2004395661").split()}
