@@ -4,14 +4,14 @@ from platform import uname
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@skyzu_cmd(pattern="deploy ?(.*)")
+@lepin_cmd(pattern="deploy ?(.*)")
 async def _(event):
 
     if event.fwd_from:
@@ -27,7 +27,7 @@ async def _(event):
     await event.edit("Deploying...")
 
     animation_chars = [
-        "Heroku Connecting To Latest Github Build (Skyzu/Skyzu-Userbot)",
+        "Heroku Connecting To Latest Github Build (Yansensad/yansdn-userbot)",
         f"Build started by user `{DEFAULTUSER}`",
         f"Deploy `535a74f0` by user `{DEFAULTUSER}`",
         "`Restarting Heroku Server...`",
@@ -40,14 +40,14 @@ async def _(event):
         "telethon.network.mtprotosender -\nINFO - Connection to 91.108.56.170:443/TcpFull complete!",
         "telethon.network.mtprotosender -\nINFO - Disconnection from 91.108.56.146:443/TcpFull complete!",
         "telethon.network.mtprotosender -\nINFO - Disconnecting from 91.108.56.146:443/TcpFull...",
-        "INFO - Modules to load :\n ['__help', 'admin', 'adzan', 'afk', 'allscrapers', 'android', 'anilist', 'animasi', 'anime', 'anti_spambot', 'antiflood', 'aria', 'ascii', 'bitly', 'blacklist', 'carbon', 'chat', 'coolprofilepics', 'covid', 'create', 'createstickers', 'dbs', 'deepfry', 'deezloader', 'detection', 'emojigames', 'eval', 'fakegban', 'federasi', 'figlet', 'filemanager', 'filter', 'games', 'gban', 'gcast', 'gdrive', 'get_user_id', 'getmusic', 'gid', 'gitcommit', 'github', 'glitcher', 'globalban', 'googlephotos', 'gps', 'hack', 'hash', 'help', 'hentai', 'herokuapp', 'igsaver', 'imgmemes', 'imp', 'kekuatan', 'geez', 'kenzogans', 'kenzogans24', 'lastfm', 'lock', 'lynxae', 'lynxhelper', 'lynxhz', 'lynxmemes', 'lynxmisc', 'lynxtt', 'lynxwc', 'lyrics', 'mega_downloads', 'memes', 'memify', 'mentions', 'messages', 'misc', 'nekobot', 'notes', 'offline', 'oi', 'phreaker', 'pms', 'profile', 'quotly', 'rastick', 'resi', 'reverse', 'salam', 'sangmata', 'santet', 'sed', 'snips', 'spam', 'spotifynow', 'ss_video', 'statme', 'stext', 'stickers', 'stickers_v2', 'system_stats', 'tag_all', 'telegraph', 'tempmail', 'time_date', 'tiny', 'torrentsearch', 'transform', 'updater', 'upload_download', 'waifu','transform', 'updater', 'upload_download', 'waifu', 'wallpaper', 'weather', 'webupload', 'welcomes', 'whois', 'www', 'xiaomi', 'zipfile']",
+        "INFO - Modules to load :\n ['__help', 'admin', 'adzan', 'afk', 'allscrapers', 'android', 'anilist', 'animasi', 'anime', 'anti_spambot', 'antiflood', 'aria', 'ascii', 'bitly', 'blacklist', 'carbon', 'chat', 'coolprofilepics', 'covid', 'create', 'createstickers', 'dbs', 'deepfry', 'deezloader', 'detection', 'emojigames', 'eval', 'fakegban', 'federasi', 'figlet', 'filemanager', 'filter', 'games', 'gban', 'gcast', 'gdrive', 'get_user_id', 'getmusic', 'gid', 'gitcommit', 'github', 'glitcher', 'globalban', 'googlephotos', 'gps', 'hack', 'hash', 'help', 'hentai', 'herokuapp', 'igsaver', 'imgmemes', 'imp', 'kekuatan', 'geez', 'kenzogans', 'kenzogans24', 'lastfm', 'lock', 'pinae', 'pinhelper', 'pinhz', 'pinmemes', 'pinmisc', 'pintt', 'pinwc', 'lyrics', 'mega_downloads', 'memes', 'memify', 'mentions', 'messages', 'misc', 'nekobot', 'notes', 'offline', 'oi', 'phreaker', 'pms', 'profile', 'quotly', 'rastick', 'resi', 'reverse', 'salam', 'sangmata', 'santet', 'sed', 'snips', 'spam', 'spotifynow', 'ss_video', 'statme', 'stext', 'stickers', 'stickers_v2', 'system_stats', 'tag_all', 'telegraph', 'tempmail', 'time_date', 'tiny', 'torrentsearch', 'transform', 'updater', 'upload_download', 'waifu','transform', 'updater', 'upload_download', 'waifu', 'wallpaper', 'weather', 'webupload', 'welcomes', 'whois', 'www', 'xiaomi', 'zipfile']",
         "telethon.network.mtprotosender -\nINFO - Connecting to 91.108.56.146:443/TcpFull...",
         "telethon.network.mtprotosender -\nINFO - Connection to 91.108.56.146:443/TcpFull complete!",
         "telethon.network.mtprotosender -\nINFO - Received response without parent request",
         "INFO - Skyzu-Userbot: Logged in as 557667062",
         "INFO - Skyzu-Userbot: Successfully...",
-        "919852+00:00 app[worker.1]: 919 - Rose-Userbot -",
-        "INFO - ⚡ Skyzu-Userbot ⚡ ⚙️ V5.0 [TELAH DIAKTIFKAN!]",
+        "919852+00:00 app[worker.1]: 919 - yansen-userbot -",
+        "INFO - ⚡ yansen-userbot ⚡ ⚙️ V7.0 [TELAH DIAKTIFKAN!]",
         "**Build Succeeded**",
     ]
 
