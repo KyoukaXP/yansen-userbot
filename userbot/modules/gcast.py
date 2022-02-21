@@ -11,7 +11,6 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 from userbot import CMD_HELP
-from userbot import CMD_HANDLER as cmd
 from userbot.utils import lepin_cmd
 
 GCAST_BLACKLIST = [
@@ -19,7 +18,6 @@ GCAST_BLACKLIST = [
     -1001739225115,  # Yansensupport
     -1001736842222,  # KenzhuSupport
     -1001631322423,  # FoxSupport
-
 ]
 
 
@@ -31,7 +29,9 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Kasih Sebuah Pesan atau Replyan Lah Tolol, Lo Kira Gue Tau Isi Otak Sagapung Lo**")
+        await event.edit(
+            "**Kasih Sebuah Pesan atau Replyan Lah Tolol, Lo Kira Gue Tau Isi Otak Sagapung Lo**"
+        )
         return
     kk = await event.edit("`Nyebar Bokep Di Aktfikan, Sabar Ya Tod`")
     er = 0
