@@ -23,7 +23,7 @@ from userbot import (
     PMPERMIT_TEXT,
 )
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 if PMPERMIT_PIC is None:
     CUSTOM_PIC = ALIVE_LOGO
@@ -44,13 +44,13 @@ CUSTOM_TEXT = (
 )
 DEF_UNAPPROVED_MSG = (
     "╔═════════════════════╗\n"
-    "    ⚡ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 ⚡ \n"
+    "    🔥 YANSEN USERBOT 🔥 \n"
     "╚═════════════════════╝\n"
     "**TOLONG JANGAN MELAKUKAN SPAM CHAT KEPADA MAJIKAN SAYA** \n"
     f"**YA KONTOL KARENA SAYA AKAN OTOMATIS MEMBLOKIR KAMU, TUNGGU SAMPAI {DEFAULTUSER} MENERIMA PESAN KAMU** \n"
     "╔═════════════════════╗\n"
     "│○›Support : @YansenSupport      \n"
-    f"│○›ᗷy :  𝐘𝐀𝐍𝐒𝐄𝐍-𝐔𝐒𝐄𝐑𝐁𝐎𝐓           \n"
+    f"│○›ᗷy :  YANSEN USERBOT           \n"
     "╚═════════════════════╝"
 )
 # =================================================================
@@ -192,7 +192,7 @@ async def auto_accept(event):
                     )
 
 
-@skyzu_cmd(pattern="notifoff$")
+@lepin_cmd(pattern="notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -205,7 +205,7 @@ async def notifoff(noff_event):
     )
 
 
-@skyzu_cmd(pattern="notifon$")
+@lepin_cmd(pattern="notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -218,7 +218,7 @@ async def notifon(non_event):
     )
 
 
-@skyzu_cmd(pattern="(?:setuju|ok)\s?(.)?")
+@lepin_cmd(pattern="(?:setuju|ok)\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -268,7 +268,7 @@ async def approvepm(apprvpm):
         )
 
 
-@skyzu_cmd(pattern="(?:tolak|nopm)\s?(.)?")
+@lepin_cmd(pattern="(?:tolak|nopm)\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -297,7 +297,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@skyzu_cmd(pattern="block$")
+@lepin_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -329,7 +329,7 @@ async def blockpm(block):
         )
 
 
-@skyzu_cmd(pattern="unblock$")
+@lepin_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -346,7 +346,7 @@ async def unblockpm(unblock):
         )
 
 
-@skyzu_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\w*)")
+@lepin_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
