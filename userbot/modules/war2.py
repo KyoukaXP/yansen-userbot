@@ -45,7 +45,7 @@ async def typewriter(typew):
     await typew.edit("**Lawriiiiiiieeeee:v**")
 
 
-@lepin_cms(pattern="wah(?: |$)(.*)")
+@lepin_cmd(pattern="wah(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Wahh, War nya keren bang`")
