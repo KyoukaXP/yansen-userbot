@@ -12,26 +12,16 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
-    -1001433238829,  # TedeSupport
-    -1001476936696,  # AnosSupport
-    -1001327032795,  # UltroidSupport
-    -1001294181499,  # UserBotIndo
-    -1001419516987,  # VeezSupportGroup
-    -1001459812644,  # GeezSupportGroup
-    -1001296934585,  # X-PROJECT BOT
-    -1001481357570,  # UsergeOnTopic
-    -1001459701099,  # CatUserbotSupport
-    -1001109837870,  # TelegramBotIndonesia
-    -1001752592753,  # Skyzusupport
-    -1001380293847,  # NastySupport
+    -1001739225115,  # Rumah
+
 ]
 
 
-@skyzu_cmd(pattern="gcast(?: |$)(.*)")
+@lepin_cmd(pattern="gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -39,9 +29,9 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Berikan Sebuah Pesan atau Reply**")
+        await event.edit("**Berikan Sebuah Pesan atau Reply Pesan Lah Kontol**")
         return
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Nyebar Hoax Di Aktifkan...`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -56,11 +46,11 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+        f"**Berhasil Mengirim Hoax Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
     )
 
 
-@skyzu_cmd(pattern="gucast(?: |$)(.*)")
+@lepin_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -68,9 +58,9 @@ async def gucast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Berikan Sebuah Pesan atau Reply**")
+        await event.edit("**Berikan Sebuah Pesan atau Reply Pesan Lah Kontol**")
         return
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Nyebar Hoax Di Aktifkan...`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
