@@ -6,7 +6,7 @@ from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, bot
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
 async def get_full_user(event):
@@ -81,7 +81,7 @@ async def handler(tele):
                             return
 
 
-@skyzu_cmd(pattern="gban(?: |$)(.*)")
+@lepin_cmd(pattern="gban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
@@ -92,7 +92,7 @@ async def gben(userbot):
     else:
         dark = await dc.edit("`Memproses Global Banned Pengguna Ini!!`")
     me = await userbot.client.get_me()
-    await dark.edit(f"`Global Banned Akan Segera Aktif Tuan!!!`")
+    await dark.edit(f"`Global Banned Akan Segera Aktif Monyet!!`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -114,7 +114,7 @@ async def gben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`Anda Tidak Bisa Melakukan Global Banned, Karena dia pembuatku 🤪`"
+                f"`LO GABISA GBAN TUHAN GOBLOK😝`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -133,7 +133,7 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`Global Banned Si Jamet Aktif Tuan✅`")
+                await dark.edit(f"`Global Banned Si Babu Aktif Ye Nyet✅`")
             except BaseException:
                 b += 1
     else:
@@ -150,7 +150,7 @@ async def gben(userbot):
     )
 
 
-@skyzu_cmd(pattern="ungban(?: |$)(.*)")
+@lepin_cmd(pattern="ungban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
@@ -162,7 +162,7 @@ async def gunben(userbot):
         dark = await dc.edit("`Membatalkan Perintah Global Banned`")
     me = await userbot.client.get_me()
     await dark.edit(
-        f"`Memulai Membatalkan Perintah Global Banned, Jangan Jadi Jamet Lagi Ya!!!`"
+        f"`Memulai Membatalkan Perintah Global Banned, Jangan Jadi Bocah Hina Lagi Ya!!!`"
     )
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
@@ -185,7 +185,7 @@ async def gunben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                "**Pengguna Ini tidak bisa di Blacklist, Karna Dia adalah pembuatku** 🤪"
+                "**Pengguna Ini tidak bisa di Blacklist, Karna Dia adalah Tuhan mu** 🤪"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
