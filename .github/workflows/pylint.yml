@@ -29,6 +29,6 @@ jobs:
           commit_message: 'Yansen-Userbot: auto fixes'
           commit_options: '--no-verify --signoff'
           repository: .
-          commit_user_name: Lepin
-          commit_user_email: levindyno@gmail.com
-          commit_author: Lepin <levindyno@gmail.com>
+          commit_user_name: LepinBot
+          commit_user_email: airabaqdal057@gmail.com
+          commit_author: LepinBot <airabaqdal057@gmail.com>
