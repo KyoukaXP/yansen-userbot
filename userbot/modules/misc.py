@@ -22,7 +22,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 REPOLINK = (
     str(UPSTREAM_REPO_URL)
     if UPSTREAM_REPO_URL
-    else "https://github.com/Askarbot/Skyzuu-Userbot"
+    else "https://github.com/Yansensad/yansen-userbot"
 )
 # ============================================
 
@@ -116,13 +116,16 @@ async def repeat(rep):
 
 @lepin_cmd(pattern="repo$")
 async def repo_is_here(wannasee):
-    """For .repo command, just returns the repo URL."""
+    """ For .repo command, just returns the repo URL. """
     await wannasee.edit(
-        "**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n"
-        "𝗥𝗲𝗽𝗼 🇮🇩\n"
-        "╰⎆ [Repo​](https://github.com/Yansensad/yansen-userbot)\n"
-        "❏ **Owner** ⎆ [Lepin](t.me/yansensad)\n"
-        "❏ **Support**​ ⎆ [groups](t.me/YansenSupport)\n"
+        "**Hey**, I am using **✨ʏɴsɴ-υѕєявσт✨** \n"
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](https://github.com/Yansensad/yansen-userbot)\n"
+        "➣ **Owner Bot       :** [ʏɴsɴ](t.me/yansesad)\n"
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+        "➣ **Support           :** [sᴜᴘᴘᴏʀᴛ](https://t.me/YansenSupport)\n"
+        "➣ **Channel           :** [ᴄʜᴀɴɴᴇʟ](https://t.me/trashme2)\n"
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
     )
 
 
