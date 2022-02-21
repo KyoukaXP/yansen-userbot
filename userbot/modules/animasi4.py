@@ -5,10 +5,10 @@ from telethon import events
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="sayang$")
+@lepin_cmd(pattern="sayang$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("I LOVEE YOUUU 💕")
@@ -37,7 +37,7 @@ async def koc(e):
         await e.edit("SAYANG KAMU💞")
 
 
-@skyzu_cmd(pattern="dino(?: |$)(.*)")
+@lepin_cmd(pattern="dino(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`DIN DINNN.....`")
@@ -95,7 +95,7 @@ async def typewriter(typew):
     await typew.edit("`-TAMAT-`")
 
 
-@skyzu_cmd(pattern="gabut$")
+@lepin_cmd(pattern="gabut$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`PERNAAHHHHH KAHHH KAUUU MENGIRA`")
@@ -352,7 +352,7 @@ async def koc(e):
         await e.edit("`GABUT`")
 
 
-@skyzu_cmd(pattern="sangean(?: |$)(.*)")
+@lepin_cmd(pattern="sangean(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Kalo Sange Modal`")
@@ -371,7 +371,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@skyzu_cmd(pattern="mf$")
+@lepin_cmd(pattern="mf$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`mf g dl` **ミ(ノ;_ _)ノ=3** ")
@@ -415,7 +415,7 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@skyzu_cmd(pattern="yatim(?: |$)(.*)")
+@lepin_cmd(pattern="yatim(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
