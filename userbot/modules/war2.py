@@ -6,7 +6,6 @@ from time import sleep
 
 from userbot import CMD_HELP
 from userbot.utils import lepin_cmd
-from userbot import CMD_HANDLER as cmd
 
 
 @lepin_cmd(pattern=r"^sok(?: |$)(.*)")
