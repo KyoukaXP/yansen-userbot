@@ -17,7 +17,6 @@ from userbot.utils import lepin_cmd
 GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
     -1001739225115,  # Rumah
-
 ]
 
 
