@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from userbot import CHROME_DRIVER
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, GOOGLE_CHROME_BIN
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 CARBONLANG = "auto"
 TTS_LANG = "en"
@@ -17,14 +17,14 @@ TRT_LANG = "en"
 TEMP_DOWNLOAD_DIRECTORY = "/root/userbot/.bin"
 
 
-@skyzu_cmd(pattern="crblang (.*)")
+@lepin_cmd(pattern="crblang (.*)")
 async def setlang(prog):
     global CARBONLANG
     CARBONLANG = prog.pattern_match.group(1)
     await prog.edit(f"Language for carbon.now.sh set to {CARBONLANG}")
 
 
-@skyzu_cmd(pattern="carbon1")
+@lepin_cmd(pattern="carbon1")
 async def carbon_api(e):
     """A Wrapper for carbon.now.sh"""
     await e.edit("`Processing..`")
@@ -88,7 +88,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@skyzu_cmd(pattern="carbon2")
+@lepin_cmd(pattern="carbon2")
 async def carbon_api(e):
     """A Wrapper for carbon.now.sh"""
     await e.edit("`Processing..`")
@@ -152,7 +152,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@skyzu_cmd(pattern="carbon3")
+@lepin_cmd(pattern="carbon3")
 async def carbon_api(e):
     """A Wrapper for carbon.now.sh"""
     await e.edit("`Processing..`")
@@ -216,7 +216,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@skyzu_cmd(pattern="carbon4")
+@lepin_cmd(pattern="carbon4")
 async def carbon_api(e):
     """A Wrapper for carbon.now.sh"""
     await e.edit("`Processing..`")
@@ -280,7 +280,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@skyzu_cmd(pattern="carbon")
+@lepin_cmd(pattern="carbon")
 async def carbon_api(e):
     """A Wrapper for carbon.now.sh"""
     await e.edit("`Processing..`")
