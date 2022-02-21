@@ -116,7 +116,7 @@ async def repeat(rep):
 
 @lepin_cmd(pattern="repo$")
 async def repo_is_here(wannasee):
-    """ For .repo command, just returns the repo URL. """
+    """For .repo command, just returns the repo URL."""
     await wannasee.edit(
         "**Hey**, I am using **✨ʏɴsɴ-υѕєявσт✨** \n"
         "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
