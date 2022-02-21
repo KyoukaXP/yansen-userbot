@@ -2,10 +2,10 @@ import asyncio
 from time import sleep
 
 from telethon import events
+from userbor.utils import lepin_cmd
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbor.utils import lepin_cmd
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
