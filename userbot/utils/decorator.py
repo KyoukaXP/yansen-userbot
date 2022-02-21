@@ -7,7 +7,6 @@ import inspect
 import re
 from pathlib import Path
 
-import peler
 from telethon import events
 
 from userbot import (
