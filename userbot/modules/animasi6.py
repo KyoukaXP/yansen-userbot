@@ -2,10 +2,10 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="thanks(?: |$)(.*)")
+@lepin_cmd(pattern="thanks(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -20,7 +20,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="malam(?: |$)(.*)")
+@lepin_cmd(pattern="malam(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -35,7 +35,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="rumah(?: |$)(.*)")
+@lepin_cmd(pattern="rumah(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
