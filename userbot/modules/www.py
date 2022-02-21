@@ -17,15 +17,15 @@ from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, StartTime
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 absen = [
-    "**Eh ada skyzu**",
+    "**Eh ada Lepin**",
     "**Hadir ganteng** 🥵",
-    "**Hadir bro** 😎",
-    "**Hadir kak** 😉",
-    "**Hadir bang sky** 😁",
-    "**Hadir kak maap telat** 🥺",
+    "**Puji Dewa Lepin** 😇",
+    "**Minggir Goblok Lepin Dateng** 🤪",
+    "**Hormat President Lepin** 😁",
+    "**Halo Tuhan Lepin** 😍",
 ]
 
 roas = [
@@ -67,7 +67,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=1964264380, pattern=r"^.absen$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.absen$")
 async def _(skyzuu):
     await skyzuu.reply(random.choice(absen))
 
@@ -77,7 +77,7 @@ async def _(skyzuu):
     await skyzuu.reply(random.choice(roas))
 
 
-@skyzu_cmd(pattern="sping$")
+@lepin_cmd(pattern="sping$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     await get_readable_time((time.time() - StartTime))
@@ -111,11 +111,11 @@ async def redis(pong):
     await pong.edit(
         f"**{ALIVE_NAME}**        \n"
         f"**➾Kecepatan : ** %sms  \n"
-        f"**➾Branch : ** Skyzu-Userbot \n" % (duration)
+        f"**➾Branch : ** Yansen-Userbot \n" % (duration)
     )
 
 
-@skyzu_cmd(pattern="lping$")
+@lepin_cmd(pattern="lping$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -132,7 +132,7 @@ async def redis(pong):
     )
 
 
-@skyzu_cmd(pattern="xping$")
+@lepin_cmd(pattern="xping$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -149,7 +149,7 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**⚡𝐒𝐊𝐘𝐙𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓​⚡**\n"
+        f"**🌟YANSEN USERBOT​🌟**\n"
         f"➾ __Signal__    __:__ "
         f"`%sms` \n"
         f"➾ __Uptime__ __:__ "
@@ -157,7 +157,7 @@ async def redis(pong):
     )
 
 
-@skyzu_cmd(pattern="sinyal$")
+@lepin_cmd(pattern="sinyal$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -173,7 +173,7 @@ async def redis(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     await pong.edit(
-        f"**⚡𝐒𝐊𝐘𝐙𝐔 𝐔𝐒𝐄𝐑𝐁𝐎𝐓​⚡**\n"
+        f"**🌟YANSEN USERBOT🌟**\n"
         f"** ▹  Sɪɢɴᴀʟ   :** "
         f"`%sms` \n"
         f"** ▹  Uᴘᴛɪᴍᴇ  :** "
@@ -182,7 +182,7 @@ async def redis(pong):
     )
 
 
-@skyzu_cmd(pattern="ping$")
+@lepin_cmd(pattern="ping$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -203,7 +203,7 @@ async def redis(pong):
     )
 
 
-@skyzu_cmd(pattern="kecepatan$")
+@lepin_cmd(pattern="kecepatan$")
 async def speedtst(spd):
     """For .speed command, use SpeedTest to check server speeds."""
     await spd.edit("**Sedang Menjalankan Tes Kecepatan Jaringan,Mohon Tunggu...**")
@@ -228,7 +228,7 @@ async def speedtst(spd):
         f"`{result['ping']}` \n"
         "✧ **ISP:** "
         f"`{result['client']['isp']}` \n"
-        "✧ **BOT:** ⚡skyzu-userbot⚡"
+        "✧ **BOT:** 🌟yansen-userbot🌟"
     )
 
 
@@ -245,7 +245,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@skyzu_cmd(pattern="pong$")
+@lepin_cmd(pattern="pong$")
 async def pingme(pong):
     """For .ping command, ping the userbot from any chat."""
     start = datetime.now()
@@ -266,7 +266,7 @@ async def pingme(pong):
     await pong.edit(f"**⚡Oᴡɴᴇʀ : {ALIVE_NAME}**\n📗 `%sms`" % (duration))
 
 
-@skyzu_cmd(pattern="pink$")
+@lepin_cmd(pattern="pink$")
 async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
@@ -297,7 +297,7 @@ async def redis(pong):
     )
 
 
-@skyzu_cmd(pattern="fping$")
+@lepin_cmd(pattern="fping$")
 async def pingme(pong):
     """For .ping command, ping the userbot from any chat."""
     await get_readable_time((time.time() - StartTime))
