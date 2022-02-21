@@ -2,7 +2,7 @@ import asyncio
 from time import sleep
 
 from telethon import events
-from userbor.utils import lepin_cmd
+from userbot.utils import lepin_cmd
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
