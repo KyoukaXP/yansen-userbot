@@ -3,10 +3,11 @@
 # FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-import inspect peler
+import inspect
 import re
 from pathlib import Path
 
+import peler
 from telethon import events
 
 from userbot import (
