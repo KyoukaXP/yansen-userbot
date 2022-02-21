@@ -16,7 +16,7 @@ from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 # ================= CONSTANT =================
 METOOSTR = [
@@ -805,12 +805,12 @@ AENJEAYE = """
 # ===========================================
 
 
-@skyzu_cmd(pattern="anjay$")
+@lepin_cmd(pattern="anjay$")
 async def anjay(njay):
     await njay.edit(AENJEAYE)
 
 
-@skyzu_cmd(pattern="(\w+)say (.*)")
+@lepin_cmd(pattern="(\w+)say (.*)")
 async def univsaye(cowmsg):
     arg = cowmsg.pattern_match.group(1).lower()
     text = cowmsg.pattern_match.group(2)
@@ -833,7 +833,7 @@ async def kek(keks):
         await keks.edit(":" + uio[i % 2])
 
 
-@skyzu_cmd(pattern="coinflip (.*)")
+@lepin_cmd(pattern="coinflip (.*)")
 async def coin(event):
     r = choice(["heads", "tails"])
     input_str = event.pattern_match.group(1)
@@ -859,7 +859,7 @@ async def coin(event):
             await event.edit("The coin landed on: **Tails**.")
 
 
-@skyzu_cmd(pattern="slap(?: |$)(.*)")
+@lepin_cmd(pattern="slap(?: |$)(.*)")
 async def who(event):
     replied_user = await get_user_from_event(event)
     if replied_user:
@@ -918,7 +918,7 @@ async def llol(lel):
         await lel.edit(okay)
 
 
-@skyzu_cmd(pattern="(yes|no|maybe|decide)$")
+@lepin_cmd(pattern="(yes|no|maybe|decide)$")
 async def decide(event):
     decision = event.pattern_match.group(1).lower()
     message_id = event.reply_to_msg_id if event.reply_to_msg_id else None
@@ -940,22 +940,22 @@ async def fun(e):
         await e.edit(t)
 
 
-@skyzu_cmd(pattern="fp$")
+@lepin_cmd(pattern="fp$")
 async def facepalm(e):
     await e.edit("🤦‍♂")
 
 
-@skyzu_cmd(pattern="cry$")
+@lepin_cmd(pattern="cry$")
 async def cry(e):
     await e.edit(choice(CRI))
 
 
-@skyzu_cmd(pattern="insult$")
+@lepin_cmd(pattern="insult$")
 async def insult(e):
     await e.edit(choice(INSULT_STRINGS))
 
 
-@skyzu_cmd(pattern="cp(?: |$)(.*)")
+@lepin_cmd(pattern="cp(?: |$)(.*)")
 async def copypasta(cp_e):
     textx = await cp_e.get_reply_message()
     message = cp_e.pattern_match.group(1)
@@ -984,7 +984,7 @@ async def copypasta(cp_e):
     await cp_e.edit(reply_text)
 
 
-@skyzu_cmd(pattern="vapor(?: |$)(.*)")
+@lepin_cmd(pattern="vapor(?: |$)(.*)")
 async def vapor(vpr):
     reply_text = []
     textx = await vpr.get_reply_message()
@@ -1007,7 +1007,7 @@ async def vapor(vpr):
     await vpr.edit("".join(reply_text))
 
 
-@skyzu_cmd(pattern="str(?: |$)(.*)")
+@lepin_cmd(pattern="str(?: |$)(.*)")
 async def stretch(stret):
     textx = await stret.get_reply_message()
     message = stret.text
@@ -1024,7 +1024,7 @@ async def stretch(stret):
     await stret.edit(reply_text)
 
 
-@skyzu_cmd(pattern="zal(?: |$)(.*)")
+@lepin_cmd(pattern="zal(?: |$)(.*)")
 async def zal(zgfy):
     reply_text = []
     textx = await zgfy.get_reply_message()
@@ -1058,12 +1058,12 @@ async def zal(zgfy):
     await zgfy.edit("".join(reply_text))
 
 
-@skyzu_cmd(pattern="hello$")
+@lepin_cmd(pattern="hello$")
 async def hoi(hello):
     await hello.edit(choice(HELLOSTR))
 
 
-@skyzu_cmd(pattern="owo(?: |$)(.*)")
+@lepin_cmd(pattern="owo(?: |$)(.*)")
 async def focos(owo):
     textx = await owo.get_reply_message()
     message = owo.pattern_match.group(1)
@@ -1084,7 +1084,7 @@ async def focos(owo):
     await owo.edit(reply_text)
 
 
-@skyzu_cmd(pattern="ii(?: |$)(.*)")
+@lepin_cmd(pattern="ii(?: |$)(.*)")
 async def faces(ii):
     textx = await ii.get_reply_message()
     message = ii.pattern_match.group(1)
@@ -1103,7 +1103,7 @@ async def faces(ii):
     await ii.edit(reply_text)
 
 
-@skyzu_cmd(pattern="hi$")
+@lepin_cmd(pattern="hi$")
 async def sayhi(e):
     await e.edit(
         "\n🙋🙋🙋🙋🙋🙋🙋🙋🙋🙋🙋🙋"
@@ -1118,27 +1118,27 @@ async def sayhi(e):
     )
 
 
-@skyzu_cmd(pattern="react$")
+@lepin_cmd(pattern="react$")
 async def react_meme(react):
     await react.edit(choice(FACEREACTS))
 
 
-@skyzu_cmd(pattern="shg$")
+@lepin_cmd(pattern="shg$")
 async def shrugger(shg):
     await shg.edit(choice(SHGS))
 
 
-@skyzu_cmd(pattern="chase$")
+@lepin_cmd(pattern="chase$")
 async def police(chase):
     await chase.edit(choice(CHASE_STR))
 
 
-@skyzu_cmd(pattern="run$")
+@lepin_cmd(pattern="run$")
 async def runner_lol(run):
     await run.edit(choice(RUNS_STR))
 
 
-@skyzu_cmd(pattern="metoo$")
+@lepin_cmd(pattern="metoo$")
 async def metoo(hahayes):
     await hahayes.edit(choice(METOOSTR))
 
@@ -1151,22 +1151,22 @@ async def Oof(e):
         await e.edit(t)
 
 
-@skyzu_cmd(pattern="10iq$")
+@lepin_cmd(pattern="10iq$")
 async def iqless(e):
     await e.edit("♿")
 
 
-@skyzu_cmd(pattern="fuck$")
+@lepin_cmd(pattern="fuck$")
 async def iqbot(e):
     await e.edit("🖕🖕🖕🖕🖕🖕🖕🖕\n🖕🖕🖕🖕🖕🖕🖕🖕\n🖕🖕\n🖕🖕\n🖕🖕\n🖕🖕🖕🖕🖕🖕\n🖕🖕🖕🖕🖕🖕\n🖕🖕\n🖕🖕\n🖕🖕\n🖕🖕\n🖕🖕")
 
 
-@skyzu_cmd(pattern="bye$")
+@lepin_cmd(pattern="bye$")
 async def iqboot(e):
     await e.edit("Kek thx bye")
 
 
-@skyzu_cmd(pattern="moon$")
+@lepin_cmd(pattern="moon$")
 async def moon(event):
     deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
     try:
@@ -1178,7 +1178,7 @@ async def moon(event):
         return
 
 
-@skyzu_cmd(pattern="earth$")
+@lepin_cmd(pattern="earth$")
 async def earth(event):
     deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎"))
     try:
@@ -1190,7 +1190,7 @@ async def earth(event):
         return
 
 
-@skyzu_cmd(pattern="clock$")
+@lepin_cmd(pattern="clock$")
 async def clock(event):
     deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
     try:
@@ -1202,7 +1202,7 @@ async def clock(event):
         return
 
 
-@skyzu_cmd(pattern="rain$")
+@lepin_cmd(pattern="rain$")
 async def rain(event):
     deq = deque(list("☀️🌤⛅️🌥☁️🌧⛈"))
     try:
@@ -1214,7 +1214,7 @@ async def rain(event):
         return
 
 
-@skyzu_cmd(pattern="love$")
+@lepin_cmd(pattern="love$")
 async def love(event):
     deq = deque(list("❤️🧡💛💚💙💜🖤💕💞💓💗💖💘💝"))
     try:
@@ -1226,7 +1226,7 @@ async def love(event):
         return
 
 
-@skyzu_cmd(pattern="mock(?: |$)(.*)")
+@lepin_cmd(pattern="mock(?: |$)(.*)")
 async def spongemocktext(mock):
     reply_text = []
     textx = await mock.get_reply_message()
@@ -1248,7 +1248,7 @@ async def spongemocktext(mock):
     await mock.edit("".join(reply_text))
 
 
-@skyzu_cmd(pattern="clap(?: |$)(.*)")
+@lepin_cmd(pattern="clap(?: |$)(.*)")
 async def claptext(memereview):
     textx = await memereview.get_reply_message()
     message = memereview.pattern_match.group(1)
@@ -1264,7 +1264,7 @@ async def claptext(memereview):
     await memereview.edit(reply_text)
 
 
-@skyzu_cmd(pattern="bt$")
+@lepin_cmd(pattern="bt$")
 async def bluetext(bt_e):
     if await bt_e.get_reply_message() and bt_e.is_group:
         await bt_e.edit(
@@ -1273,7 +1273,7 @@ async def bluetext(bt_e):
         )
 
 
-@skyzu_cmd(pattern="f (.*)")
+@lepin_cmd(pattern="f (.*)")
 async def payf(event):
     paytext = event.pattern_match.group(1)
     pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
@@ -1293,7 +1293,7 @@ async def payf(event):
     await event.edit(pay)
 
 
-@skyzu_cmd(pattern="lfy (.*)")
+@lepin_cmd(pattern="lfy (.*)")
 async def let_me_google_that_for_you(lmgtfy_q):
     textx = await lmgtfy_q.get_reply_message()
     qry = lmgtfy_q.pattern_match.group(1)
@@ -1311,7 +1311,7 @@ async def let_me_google_that_for_you(lmgtfy_q):
     )
 
 
-@skyzu_cmd(pattern="scam(?: |$)(.*)")
+@lepin_cmd(pattern="scam(?: |$)(.*)")
 async def scam(event):
     options = [
         "typing",
@@ -1352,7 +1352,7 @@ async def scam(event):
         return
 
 
-@skyzu_cmd(pattern="type(?: |$)(.*)")
+@lepin_cmd(pattern="type(?: |$)(.*)")
 async def typewriter(typew):
     textx = await typew.get_reply_message()
     message = typew.pattern_match.group(1)
@@ -1376,13 +1376,13 @@ async def typewriter(typew):
         await sleep(sleep_time)
 
 
-@skyzu_cmd(pattern="leave$")
+@lepin_cmd(pattern="leave$")
 async def leave(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`You must Leaving dis Group kek!`")
 
 
-@skyzu_cmd(pattern="fail$")
+@lepin_cmd(pattern="fail$")
 async def fail(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1393,7 +1393,7 @@ async def fail(e):
         )
 
 
-@skyzu_cmd(pattern="loll$")
+@lepin_cmd(pattern="loll$")
 async def leol(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1404,7 +1404,7 @@ async def leol(e):
         )
 
 
-@skyzu_cmd(pattern="lool$")
+@lepin_cmd(pattern="lool$")
 async def lool(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1414,7 +1414,7 @@ async def lool(e):
         )
 
 
-@skyzu_cmd(pattern="stfu$")
+@lepin_cmd(pattern="stfu$")
 async def stfu(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1430,7 +1430,7 @@ async def stfu(e):
         )
 
 
-@skyzu_cmd(pattern="gtfo$")
+@lepin_cmd(pattern="gtfo$")
 async def gtfo(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1446,7 +1446,7 @@ async def gtfo(e):
         )
 
 
-@skyzu_cmd(pattern="nih$")
+@lepin_cmd(pattern="nih$")
 async def nih(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1460,7 +1460,7 @@ async def nih(e):
         )
 
 
-@skyzu_cmd(pattern="fag$")
+@lepin_cmd(pattern="fag$")
 async def fgtfo(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1474,25 +1474,25 @@ async def fgtfo(e):
         )
 
 
-@skyzu_cmd(pattern="taco$")
+@lepin_cmd(pattern="taco$")
 async def taco(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(r"{\__/}" "\n(●_●)" "\n( >🌮 Want a taco?")
 
 
-@skyzu_cmd(pattern="paw$")
+@lepin_cmd(pattern="paw$")
 async def paw(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`(=ↀωↀ=)")
 
 
-@skyzu_cmd(pattern="tf$")
+@lepin_cmd(pattern="tf$")
 async def tf(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("(̿▀̿ ̿Ĺ̯̿̿▀̿ ̿)̄  ")
 
 
-@skyzu_cmd(pattern="gey$")
+@lepin_cmd(pattern="gey$")
 async def gey(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1503,7 +1503,7 @@ async def gey(e):
         )
 
 
-@skyzu_cmd(pattern="gay$")
+@lepin_cmd(pattern="gay$")
 async def ghey(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1514,7 +1514,7 @@ async def ghey(e):
         )
 
 
-@skyzu_cmd(pattern="bot$")
+@lepin_cmd(pattern="bot$")
 async def bot(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1523,7 +1523,7 @@ async def bot(e):
         )
 
 
-@skyzu_cmd(pattern="hey$")
+@lepin_cmd(pattern="hey$")
 async def hey(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1533,7 +1533,7 @@ async def hey(e):
         )
 
 
-@skyzu_cmd(pattern="nou$")
+@lepin_cmd(pattern="nou$")
 async def nou(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit(
@@ -1544,7 +1544,7 @@ async def nou(e):
         )
 
 
-@skyzu_cmd(pattern="koc$")
+@lepin_cmd(pattern="koc$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("8✊===D")
@@ -1568,7 +1568,7 @@ async def koc(e):
         await e.edit(choice(FACEREACTS))
 
 
-@skyzu_cmd(pattern="(?:penis|dick)\s?(.)?")
+@lepin_cmd(pattern="(?:penis|dick)\s?(.)?")
 async def emoji_penis(e):
     emoji = e.pattern_match.group(1)
     titid = GAMBAR_TITIT
