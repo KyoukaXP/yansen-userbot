@@ -15,7 +15,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 if 1 == 1:
     strings = {
@@ -54,7 +54,7 @@ if 1 == 1:
     }
 
 
-@skyzu_cmd(pattern="q")
+@lepin_cmd(pattern="q")
 async def quotess(qotli):
     if qotli.fwd_from:
         return
@@ -95,7 +95,7 @@ async def quotess(qotli):
         await qotli.edit()
 
 
-@skyzu_cmd(pattern="xquote(?: |$)(.*)")
+@lepin_cmd(pattern="xquote(?: |$)(.*)")
 async def quote_search(event):
     if event.fwd_from:
         return
