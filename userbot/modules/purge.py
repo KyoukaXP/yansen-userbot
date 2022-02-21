@@ -9,7 +9,7 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from userbot import CMD_HELP, DEVS
 from userbot.events import register
 from userbot.utils import lepin_cmd
 
