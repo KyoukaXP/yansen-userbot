@@ -117,8 +117,8 @@ async def runcmd(cmd: str) -> tuple[str, str, int, int]:
 
 
 async def ya_kali_ngga():
-    buwung = str(pybase64.b64decode("QFlhbnNlblN1cHBvcnQ=="))[2:15]
-    puyuh = str(pybase64.b64decode("QHRyYXNobWUy=="))[2:15]
+    buwung = str(pybase64.b64decode("QFlhbnNlblN1cHBvcnQ="))[2:15]
+    puyuh = str(pybase64.b64decode("QHRyYXNobWUy"))[2:14]
     try:
         await bot(Get(buwung))
     except BaseException:
@@ -190,8 +190,8 @@ async def run_cmd(cmd: list) -> tuple[bytes, bytes]:
 
 def post_to_telegraph(title, html_format_content):
     post_client = TelegraphPoster(use_api=True)
-    auth_name = "skyzu-userbot"
-    auth_url = "https://github.com/Skyzu/skyzu-userbot"
+    auth_name = "yansen-userbot"
+    auth_url = "https://github.com/Yansensad/yansen-userbot"
     post_client.create_api_token(auth_name)
     post_page = post_client.post(
         title=title,
