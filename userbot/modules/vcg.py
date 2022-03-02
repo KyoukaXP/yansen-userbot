@@ -1,5 +1,6 @@
 # Thanks Full To Team Ultroid
-# Ported By @skyzu
+# Fiks By Kyy @IDnyaKosong
+
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
@@ -7,11 +8,13 @@ from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
-from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP
+from telethon.tl import types
+from telethon.utils import get_display_name
+
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 from userbot.utils import lepin_cmd
 
-NO_ADMIN = "`Maaf Kamu Bukan Admin!"
+NO_ADMIN = "`Maaf Kamu Bukan Admin 👮`"
 
 
 def vcmention(user):
@@ -21,72 +24,74 @@ def vcmention(user):
     return f"[{full_name}](tg://user?id={user.id})"
 
 
-async def get_call(sky):
-    sky = await sky.client(getchat(kyy.chat_id))
-    await sky.client(getvc(sky.full_chat.call))
+async def get_call(lepin):
+    lepin = await lepin.client(getchat(lepin.chat_id))
+    await lepin.client(getvc(lepin.full_chat.call, limit=1))
     return hehe.call
 
 
 def user_list(l, n):
     for i in range(0, len(l), n):
-        yield l[i : i + n]
+        yield l[i: i + n]
 
 
 @lepin_cmd(pattern="startvc$")
-async def start_voice(td):
-    chat = await td.get_chat()
+async def start_voice(c):
+    chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await td.edit(NO_ADMIN)
+        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        return
     try:
-        await td.client(startvc(td.chat_id))
-        await td.edit("`Voice Chat Started...`")
+        await c.client(startvc(c.chat_id))
+        await c.edit("`Memulai Obrolan Suara`")
     except Exception as ex:
-        await td.edit(f"`{str(ex)}`")
+        await c.edit(f"**ERROR:** `{ex}`")
 
 
 @lepin_cmd(pattern="stopvc$")
-async def stop_voice(td):
-    chat = await td.get_chat()
+async def stop_voice(c):
+    chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await td.edit(NO_ADMIN)
+        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        return
     try:
-        await td.client(stopvc(await get_call(td)))
-        await td.edit("`Voice Chat Stopped...`")
+        await c.client(stopvc(await get_call(c)))
+        await c.edit("`Mematikan Obrolan Suara`")
     except Exception as ex:
-        await td.edit(f"`{str(ex)}`")
+        await c.edit(f"**ERROR:** `{ex}`")
 
 
 @lepin_cmd(pattern="vcinvite")
-async def vc_invite(td):
-    await td.edit("`Sedang Mengivinte Member...`")
+async def _(lepin):
+    await lepin.edit("`Sedang Menginvite Member...`")
     users = []
     z = 0
-    async for x in td.client.iter_participants(td.chat_id):
+    async for x in lepin.client.iter_participants(kyy.chat_id):
         if not x.bot:
             users.append(x.id)
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await td.client(invitetovc(call=await get_call(td), users=p))
+            await lepin.client(invitetovc(call=await get_call(kyy), users=p))
             z += 6
         except BaseException:
             pass
-    await td.edit(f"`Invited {z} users`")
+    await lepin.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
     {
         "vcg": f"𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}startvc`\
-         \n↳ : Start Group Call in a group.\
+         \n↳ : Memulai Obrolan Suara dalam Group.\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}stopvc`\
-         \n↳ : `Stop Group Call in a group.`\
+         \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `{cmd}vcinvite`\
-         \n↳ : Invite all members of group in Group Call. (You must be joined)."
+         \n↳ : Invite semua member yang berada di group."
     }
 )
