@@ -123,7 +123,7 @@ async def perkenalan(event):
 # Perkenalan
 
 
-@lepin_cmd(pattern="skyzu(?: |$)(.*)")
+@lepin_cmd(pattern="ahah(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
@@ -148,7 +148,7 @@ async def typewriter(typew):
     await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
 
 
-# Create by myself @skyzuex
+# Create by @skyzuex
 
 
 CMD_HELP.update(
@@ -164,8 +164,8 @@ CMD_HELP.update(
         \nUsage : Member Goblok\
         \n\n Cmd : `{cmd}kenalin`\
         \nUsage : Awokwok\
-        \n\n Cmd : `{cmd}skyzu`\
-        \nUsage : buat ngeledek skyzu\
+        \n\n Cmd : `{cmd}ahah`\
+        \nUsage : liat sendiri\
         \n\n Cmd : `{cmd}p`\
         \nUsage : Untuk Memberi Salam\
     "
