@@ -9,14 +9,14 @@ import sys
 from importlib import import_module
 
 from userbot import (
-   ALIVE_NAME,
-   BOT_TOKEN,
-   BOT_USERNAME,
-   BOT_VER,
-   BOTLOG_CHATID,
-   LOGS,
-   UPSTREAM_REPO_BRANCH,
-   bot,
+    ALIVE_NAME,
+    BOT_TOKEN,
+    BOT_USERNAME,
+    BOT_VER,
+    BOTLOG_CHATID,
+    LOGS,
+    UPSTREAM_REPO_BRANCH,
+    bot,
 )
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
@@ -30,6 +30,7 @@ try:
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
+
 
 async def userbot_on():
     try:
