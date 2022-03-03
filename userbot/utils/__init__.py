@@ -16,7 +16,7 @@
 from . import format as _format
 from .utils import autobot, load_module, remove_plugin, start_assistant, create_supergroup
 from .chrome import chrome, options
-from .decorator import ass_cmd, callback, lepin_cmd, lepin_handler
+from .decorator import lepin_cmd, lepin_handler
 from .format import parse_pre
 from .google_images_download import googleimagesdownload
 from .progress import CancelProcess, progress
