@@ -43,25 +43,25 @@ def lepin_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global skyzu_reg
+        global lepin_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            skyzu_reg = sudo_reg = re.compile(pattern)
+            lepin_reg = sudo_reg = re.compile(pattern)
         else:
-            skyzu_ = "\\" + CMD_HANDLER
+            lepin_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            skyzu_reg = re.compile(skyzu_ + pattern)
+            lepin_reg = re.compile(lepin_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = skyzu_ + command
+                cmd1 = lepin_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (skyzu_ + pattern)
+                    (lepin_ + pattern)
                     .replace("$", "")
                     .replace("\\", "")
                     .replace("^", "")
@@ -80,10 +80,10 @@ def lepin_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=skyzu_reg)
+                func, events.MessageEdited(**args, outgoing=True, pattern=lepin_reg)
             )
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=skyzu_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=lepin_reg)
         )
         if allow_sudo:
             if not disable_edited:
