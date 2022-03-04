@@ -22,7 +22,7 @@ GCAST_BLACKLIST = [
 ]
 
 
-@lepin_cmd(pattern="gcast(?: |$)(.*)")
+@lepin_cmd(pattern="gcast$")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -51,7 +51,7 @@ async def gcast(event):
     )
 
 
-@lepin_cmd(pattern="gucast(?: |$)(.*)")
+@lepin_cmd(pattern="gucast$")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
