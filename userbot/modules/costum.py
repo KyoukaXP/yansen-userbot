@@ -12,9 +12,10 @@
 
 from userbot import BOTLOG_CHATID, CMD_HELP
 from userbot.utils import lepin_cmd
+from userbot.event import register
 
 
-@lepin_cmd(pattern="\.\w*", ignore_unsafe=True, disable_errors=True)
+@register(outgoing=True, pattern="\.\w*", ignore_unsafe=True, disable_errors=True)
 async def on_snip(event):
     """costums logic."""
     try:
