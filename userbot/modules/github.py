@@ -5,7 +5,7 @@ from userbot import CMD_HELP
 from userbot.utils import lepin_cmd
 
 
-@lepin_cmd(pattern="git (.*)")
+@lepin_cmd(pattern="git$")
 async def github(event):
     URL = f"https://api.github.com/users/{event.pattern_match.group(1)}"
     await event.get_chat()
