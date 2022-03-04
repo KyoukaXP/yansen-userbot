@@ -19,7 +19,7 @@ from userbot import CMD_HELP, TERM_ALIAS
 from userbot.utils import lepin_cmd
 
 
-@lepin_cmd(pattern="eval(?: |$|\n)([\s\S]*)")
+@lepin_cmd(pattern="eval$")
 async def _(event):
     if event.fwd_from:
         return
@@ -77,7 +77,7 @@ async def aexec(code, smessatatus):
     return await locals()["__aexec"](message, reply, message.client)
 
 
-@lepin_cmd(pattern="exec(?: |$|\n)([\s\S]*)")
+@lepin_cmd(pattern="exec$")
 async def run(run_q):
     """For .exec command, which executes the dynamically created program"""
     code = run_q.pattern_match.group(1)
@@ -135,7 +135,7 @@ async def run(run_q):
         )
 
 
-@lepin_cmd(pattern="term(?: |$|\n)(.*)")
+@lepin_cmd(pattern="term$")
 async def terminal_runner(term):
     """For .term command, runs bash commands and scripts on your server."""
     curruser = TERM_ALIAS if TERM_ALIAS else getuser()
