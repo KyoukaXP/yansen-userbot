@@ -29,7 +29,7 @@ try:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
     LOGS.info(
-        f"Jika Reponya Bermadalah Silahkan Lapor Ke @lepinex. [ TELAH DIAKTIFKAN! ]"
+        f"Jika Reponya Bermasalah Silahkan Lapor Ke @lepinex. [ BOT TELAH DIAKTIFKAN! ]"
     )
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
