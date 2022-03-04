@@ -81,7 +81,7 @@ async def handler(tele):
                             return
 
 
-@lepin_cmd(pattern="gban(?: |$)(.*)")
+@lepin_cmd(pattern="gban$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
@@ -148,7 +148,7 @@ async def gben(userbot):
     )
 
 
-@lepin_cmd(pattern="ungban(?: |$)(.*)")
+@lepin_cmd(pattern="ungban$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
