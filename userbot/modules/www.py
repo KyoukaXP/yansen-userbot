@@ -42,10 +42,10 @@ roas = [
 ]
 
 sayang = [
-    "APA SAYANGKU💦"
-    "IYA KENAPA SAYANG😖"
-    "MINGGIR ADA SAYANGNYA AKU"
-    "EH ADA SAYANG AKU, AYO KITA VCS"
+    "APA SAYANGKU💦",
+    "IYA KENAPA SAYANG😖",
+    "MINGGIR ADA SAYANGNYA AKU",
+    "EH ADA SAYANG AKU, AYO KITA VCS",
 ]
 
 
