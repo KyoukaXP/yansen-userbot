@@ -28,7 +28,7 @@ else:
 """
 
 
-@lepin_cmd(pattern="(get|del) var$")
+@lepin_cmd(pattern="(get|del) var(?: |$)(\w*)")
 async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
@@ -91,7 +91,7 @@ async def variable(var):
             return True
 
 
-@lepin_cmd(pattern="set var$")
+@lepin_cmd(pattern="set var (\w*) ([\s\S]*)")
 async def set_var(var):
     await var.edit("`Sedang Menyetel Config Vars ヅ`")
     variable = var.pattern_match.group(1)
@@ -122,7 +122,7 @@ async def set_var(var):
 """
 
 
-@lepin_cmd(pattern="usage$")
+@lepin_cmd(pattern="usage(?: |$)")
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
