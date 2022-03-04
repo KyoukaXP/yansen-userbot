@@ -54,7 +54,7 @@ async def get_chatinfo(event):
     return chat_info
 
 
-@lepin_cmd(pattern="inviteall(?: |$)(.*)")
+@lepin_cmd(pattern="inviteall$")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
