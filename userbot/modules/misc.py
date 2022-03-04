@@ -31,7 +31,7 @@ useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) 
 opener.addheaders = [("User-agent", useragent)]
 
 
-@lepin_cmd(pattern="random")
+@lepin_cmd(pattern="random$")
 async def randomise(items):
     """For .random command, get a random item from the list of items."""
     itemo = (items.text[8:]).split()
@@ -100,7 +100,7 @@ async def reedme(e):
     )
 
 
-@lepin_cmd(pattern="repeat (.*)")
+@lepin_cmd(pattern="repeat$")
 async def repeat(rep):
     cnt, txt = rep.pattern_match.group(1).split(" ", 1)
     replyCount = int(cnt)
@@ -153,7 +153,7 @@ async def raw(event):
         )
 
 
-@lepin_cmd(pattern="reverse(?: |$)(\d*)")
+@lepin_cmd(pattern="reverse$")
 async def okgoogle(img):
     """For .reverse command, Google search images and stickers."""
     if os.path.isfile("okgoogle.png"):
