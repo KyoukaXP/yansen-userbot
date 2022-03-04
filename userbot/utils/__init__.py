@@ -15,11 +15,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from . import format as _format
 from .chrome import chrome, options
-from .decorator import asst_cmd, callback, lepin_cmd, lepin_handler
+from .decorator import lepin_cmd, lepin_handler
 from .format import parse_pre
 from .google_images_download import googleimagesdownload
 from .progress import CancelProcess, progress
-from .start import startupmessage
 from .tools import (
     edit_delete,
     edit_or_reply,
