@@ -20,7 +20,6 @@ from userbot import (
     LOGS,
     UPSTREAM_REPO_BRANCH,
     bot,
-    lepinblacklist,
 )
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
