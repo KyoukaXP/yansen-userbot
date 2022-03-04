@@ -18,7 +18,7 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.utils import lepin_cmd
 
 
-@lepin_cmd(pattern="whois(?: |$)(.*)", outgoing=True)
+@lepin_cmd(pattern="whois(?: |$)(.*)")
 async def who(event):
 
     await event.edit("`Mengambil Informasi Pengguna Ini...`")
