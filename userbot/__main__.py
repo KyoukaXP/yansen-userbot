@@ -31,6 +31,7 @@ try:
     LOGS.info(
         f"Jika Reponya Bermasalah Silahkan Lapor Ke @lepinex. [ BOT TELAH DIAKTIFKAN! ]"
     )
+    LOGS.info( f"🍻Yansen-Userbot Telah Di Aktifkan {BOT_VER}" )
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
