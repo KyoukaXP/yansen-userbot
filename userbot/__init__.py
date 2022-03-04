@@ -82,20 +82,6 @@ DEVS = (
     5090127753,
     1731365899,
 )
-# Blacklist User for use Yansen-Userbot
-while 0 < 6:
-    _BLACKLIST = get(
-        "https://raw.githubusercontent.com/Yansensad/lepinblack/master/lepinblacklist.json"
-    )
-    if _BLACKLIST.status_code != 200:
-        if 0 != 5:
-            continue
-        lepinblacklist = []
-        break
-    lepinblacklist = _BLACKLIST.json()
-    break
-
-del _BLACKLIST
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2004395661").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
