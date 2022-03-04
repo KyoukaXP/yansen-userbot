@@ -17,6 +17,7 @@ from userbot import (
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
+    tgbot,
 )
 
 
@@ -61,11 +62,14 @@ def lepin_cmd(
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (lepin_ + pattern)
-                    .replace("$", "")
-                    .replace("\\", "")
-                    .replace("^", "")
-                )
+                    (lepin_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -80,8 +84,8 @@ def lepin_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=lepin_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=lepin_reg))
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=lepin_reg)
         )
@@ -113,6 +117,32 @@ def lepin_handler(
 ):
     def decorator(func):
         bot.add_event_handler(func, events.NewMessage(**args, incoming=True))
+        return func
+
+    return decorator
+
+
+def asst_cmd(**args):
+    pattern = args.get("pattern", None)
+    r_pattern = r"^[/!]"
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+    args["pattern"] = pattern.replace("^/", r_pattern, 1)
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+
+
+def callback(**args):
+    """Assistant's callback decorator"""
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.CallbackQuery(**args))
         return func
 
     return decorator
