@@ -11,7 +11,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@lepin_cmd(pattern="g(?: |$)(.*)")
+@lepin_cmd(pattern="g$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(f"**JAKA SEMBUNG BAWA GOLOK**")
@@ -22,7 +22,7 @@ async def typewriter(typew):
 # Pantun
 
 
-@lepin_cmd(pattern="p(?: |$)(.*)")
+@lepin_cmd(pattern="p$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Salam Dulu Biar Sopan...`")
@@ -33,7 +33,7 @@ async def typewriter(typew):
 # Salam
 
 
-@lepin_cmd(pattern="l(?: |$)(.*)")
+@lepin_cmd(pattern="l$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Kalo Orang Salam Itu Dijawab...`")
@@ -44,7 +44,7 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
-@lepin_cmd(pattern="kenalin(?: |$)(.*)")
+@lepin_cmd(pattern="kenalin$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("☑️ `putra wibu`")
@@ -75,7 +75,7 @@ async def typewriter(typew):
 # King Userbot Support
 
 
-@lepin_cmd(pattern="istigfar(?: |$)(.*)")
+@lepin_cmd(pattern="istigfar$")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Heh Kamu Gaboleh Begitu...`")
@@ -86,7 +86,7 @@ async def perkenalan(event):
 # Istigfar
 
 
-@lepin_cmd(pattern="virtual(?: |$)(.*)")
+@lepin_cmd(pattern="virtual$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**OOOO**")
@@ -108,7 +108,7 @@ async def typewriter(typew):
     await typew.edit("**KASIAN MANA MASIH MUDA**")
 
 
-@lepin_cmd(pattern="perkenalkan(?: |$)(.*)")
+@lepin_cmd(pattern="perkenalkan$")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Hai Guys , Perkenalkan Nama Gw {DEFAULTUSER}`")
@@ -123,7 +123,7 @@ async def perkenalan(event):
 # Perkenalan
 
 
-@lepin_cmd(pattern="ahah(?: |$)(.*)")
+@lepin_cmd(pattern="ahah$")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
