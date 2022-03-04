@@ -1,4 +1,4 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
+a# Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -97,10 +97,10 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**Ysn-Project ERROR**\n"
-                    link = "Silahkan chat: @yansesat"
+                    link = "Silahkan chat: @lepinex"
                     text += "Untuk melaporkan kesalahan"
                     text += f"tinggal teruskan pesan ini {link}.\n"
-                    text += "Skyzu Siap Membantu Kamu\n"
+                    text += "Lepin Siap Membantu Kamu\n"
 
                     ftext = "========== DISCLAIMER =========="
                     ftext += "\nThis file uploaded ONLY here,"
