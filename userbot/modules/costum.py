@@ -11,7 +11,6 @@
 """ Userbot module containing commands for keeping costum global notes. """
 
 from userbot import BOTLOG_CHATID, CMD_HELP
-from userbot import CMD_HANDLER as cmd
 from userbot.utils import lepin_cmd
 
 
