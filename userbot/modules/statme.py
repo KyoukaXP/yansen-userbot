@@ -1,5 +1,5 @@
 """Count the Number of Dialogs you have in your Telegram Account
-Syntax: .stats"""
+Syntax: {cmd}stats"""
 import logging
 import time
 
@@ -8,6 +8,7 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 from userbot.utils import lepin_cmd
+from userbot import CMD_HELP, CMD_HANDLER as cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
@@ -15,7 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-@lepin_cmd(pattern="stats(?: |$)(.*)")
+@lepin_cmd(pattern="stats$")
 async def stats(
     event: NewMessage.Event,
 ) -> None:  # pylint: disable = R0912, R0914, R0915
