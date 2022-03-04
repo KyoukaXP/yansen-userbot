@@ -6,7 +6,7 @@ from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.utils import lepin_cmd
 
 
-@lepin_cmd(pattern="kamuii(? :$)(.*)([1-8])")
+@lepin_cmd(pattern="kamui(:? |$)([1-8])?")
 async def _(fry):
     await fry.edit("`Mengaktifkan Kekuatan Supersaya...`")
     level = fry.pattern_match.group(2)
@@ -64,7 +64,7 @@ async def _(fry):
     return os.remove(downloaded_file_name)
 
 
-@lepin_cmd(pattern="df(? :$)(.*)([1-8])?")
+@lepin_cmd(pattern="df(:? |$)([1-8])?")
 async def _(fry):
     await fry.edit("`Sedang Dalam Proses......`")
     level = fry.pattern_match.group(2)
