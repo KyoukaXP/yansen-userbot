@@ -1,6 +1,7 @@
 from telethon import events
 
 from userbot import CMD_HELP
+from userbot import CMD_HANDLER as cmd
 from userbot.utils import lepin_cmd
 
 PRINTABLE_ASCII = range(0x21, 0x7F)
@@ -28,7 +29,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "aeshtetic": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙`.ae <teks>`\
+        "aeshtetic": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙`{cmd}ae <teks>`\
     \n↳ : Mengubah fonts teks"
     }
 )
