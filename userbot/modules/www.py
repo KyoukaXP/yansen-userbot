@@ -41,7 +41,11 @@ roas = [
     "POHON KARET WKWK KOCAH LO MENDING JADI SUPER MARIO AJA NOH BILANG KE KAKE NENEK LO MENDING JADI SUPER MARIO KALO GA LOST SAGA HAHA JADI BOCAH POINT BLANK DIA BOLOT ANJING AHAHA MAKANYA KALO PUNYA KUPING YANG BENERAN DIKIT TOLOL KUPING LO CONGE NYA BLEBERAN SAMPE LUAR LUAR KALI YA AHAHA KASIHAN BANGET GUA LIAT LO BERPENYAKITAN SEGALA MACEM ADA WKWK DAN BURUK NYA LO TUH LO UDAH KAYA LEAK GITU UDAH ITU MULUT UDAH KAYA JULUNG JULUNG GITU JELEK BANGET KAYA NUGET GITU YA MUKA LO BIBIR LO SUMBING YA APA DOBLEH AHAHAH",
 ]
 
-
+sayang = [ "APA SAYANGKU💦"
+           "IYA KENAPA SAYANG😖"
+           "MINGGIR ADA SAYANGNYA AKU"
+           "EH ADA SAYANG AKU, AYO KITA VCS"
+]
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -75,6 +79,11 @@ async def _(skyzuu):
 @register(incoming=True, from_users=DEVS, pattern=r"^.roas$")
 async def _(skyzuu):
     await skyzuu.reply(random.choice(roas))
+
+
+@register(incoming=True, from_users=DEVS, pattern=r".sayang$")
+async def _(lepin):
+    await lepin.reply(random.choice(sayang)) 
 
 
 @lepin_cmd(pattern="sping$")
