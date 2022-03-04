@@ -43,12 +43,8 @@ except Exception as e:
 
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
-    bot.start()
-    LOGS.info(f"⚡Yansen-Userbot⚡ ⚙️ V{BOT_VER} [ TELAH DIAKTIFKAN! ]")
-except BaseException as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
 
+LOGS.info(f"Hy {ALIVE_NAME} jika terjadi sesuatu pada botnya tanyakan kepada pemilik repo https://t.me/lepinex")
 
 async def userbot_on():
     try:
