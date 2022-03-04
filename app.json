@@ -36,7 +36,7 @@
       "required": true
     },
     "CMD_HANDLER":{
-     "description": isi handler sesukamu bisa pakai (.) atau yang lain"
+     "description": "isi handler sesukamu bisa pakai (.) atau yang lain"
      "value": "."
      "requiered": true
     },
