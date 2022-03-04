@@ -26,9 +26,13 @@ from userbot.utils import autobot
 from userbot.utils.tools import ya_kali_ngga
 
 try:
-
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
+    bot.start()
+    LOGS.info(f"Jika Reponya Bermadalah Silahkan Lapor Ke @lepinex. [ TELAH DIAKTIFKAN! ]")
+except BaseException as e:
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
 
 async def userbot_on():
     try:
