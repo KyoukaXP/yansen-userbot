@@ -10,8 +10,8 @@
     "productivity"
 ],
   "repository": "https://github.com/Yansensad/yansen-userbot",
-  "telegram": "https://t.me/yansesad",
-  "success_url": "https://t.me/yansensesat",
+  "telegram": "https://t.me/lepinex",
+  "success_url": "https://t.me/YansenSupport",
   "stack": "container",
   "env": {
     "API_KEY": {
@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @yansesad di telegram",
+      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @skyzuuuu di telegram",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -34,11 +34,6 @@
       "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
       "value": "Check Di Heroku Dashboard Mu",
       "required": true
-    },
-    "CMD_HANDLER": {
-     "description": "isi handler sesukamu bisa pakai (.) atau yang lain"
-     "value": "."
-     "requiered": true
     },
     "BOTLOG_CHATID": {
       "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh : -1001234567890",
