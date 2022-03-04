@@ -8,6 +8,9 @@
 import sys
 from importlib import import_module
 
+import requests
+from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
+
 from userbot import (
     ALIVE_NAME,
     BOT_TOKEN,
@@ -16,6 +19,7 @@ from userbot import (
     BOTLOG_CHATID,
     LOGS,
     UPSTREAM_REPO_BRANCH,
+    lepinblacklist,
     bot,
 )
 from userbot.modules import ALL_MODULES
@@ -23,6 +27,20 @@ from userbot.utils import autobot
 from userbot.utils.tools import ya_kali_ngga
 
 try:
+    bot.start()
+    user = bot.get_me()
+    lepinblacklist = requests.get(
+        "https://raw.githubusercontent.com/Yansensad/lepinblack/master/lepinblacklist.json"
+    ).json()
+    if user.id in lepinblacklist:
+        LOGS.warning(
+            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE ORANG KEK LU.\nCredits: @lepinex"
+        )
+        sys.exit(1)
+except Exception as e:
+    LOGS.info(str(e), exc_info=True)
+    sys.exit(1)
+
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
