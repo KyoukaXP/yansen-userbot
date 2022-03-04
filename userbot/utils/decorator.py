@@ -62,14 +62,11 @@ def lepin_cmd(
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (lepin_ +
-                     pattern).replace(
-                        "$",
-                        "").replace(
-                        "\\",
-                        "").replace(
-                        "^",
-                        ""))
+                    (lepin_ + pattern)
+                    .replace("$", "")
+                    .replace("\\", "")
+                    .replace("^", "")
+                )
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -84,8 +81,8 @@ def lepin_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(
-                    **args, outgoing=True, pattern=lepin_reg))
+                func, events.MessageEdited(**args, outgoing=True, pattern=lepin_reg)
+            )
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=lepin_reg)
         )
