@@ -141,7 +141,7 @@ async def on_afk(event):
             pass
 
 
-@lepin_cmd(pattern="off$")  # pylint:disable=E0602
+@lepin_cmd(pattern="off(:? |$)")  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
