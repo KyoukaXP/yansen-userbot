@@ -16,7 +16,6 @@ from telethon.utils import get_input_location
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.utils import lepin_cmd
-from userbot import CMD_HANDLER as cmd
 
 
 @lepin_cmd(pattern="whois(?: |$)(.*)", outgoing=True)
