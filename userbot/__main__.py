@@ -8,7 +8,6 @@
 import sys
 from importlib import import_module
 
-import requests
 from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
 
 from userbot import (
@@ -29,10 +28,13 @@ try:
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
-    LOGS.info(f"Jika Reponya Bermadalah Silahkan Lapor Ke @lepinex. [ TELAH DIAKTIFKAN! ]")
+    LOGS.info(
+        f"Jika Reponya Bermadalah Silahkan Lapor Ke @lepinex. [ TELAH DIAKTIFKAN! ]"
+    )
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
+
 
 async def userbot_on():
     try:
