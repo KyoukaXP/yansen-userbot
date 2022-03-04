@@ -28,7 +28,7 @@ else:
 """
 
 
-@lepin_cmd(pattern="(get|del) var(?: |$)(\w*)")
+@lepin_cmd(pattern="(get|del) var$")
 async def variable(var):
     exe = var.pattern_match.group(1)
     if app is None:
@@ -91,7 +91,7 @@ async def variable(var):
             return True
 
 
-@lepin_cmd(pattern="set var (\w*) ([\s\S]*)")
+@lepin_cmd(pattern="set var$")
 async def set_var(var):
     await var.edit("`Sedang Menyetel Config Vars ヅ`")
     variable = var.pattern_match.group(1)
@@ -122,7 +122,7 @@ async def set_var(var):
 """
 
 
-@lepin_cmd(pattern="usage(?: |$)")
+@lepin_cmd(pattern="usage$")
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
@@ -175,11 +175,17 @@ async def dyno_usage(dyno):
             AppMinutes = math.floor(AppQuotaUsed % 60)
 
             await dyno.edit(
-                "☂Dყɳσ Sααƚ Iɳι : \n"
-                f"➽ {AppHours} ᴊᴀᴍ - {AppMinutes} ᴍᴇɴɪᴛ [ {AppPercentage}% ]  \n"
-                f"☂Dყɳσ Bυʅαɳ Iɳι: \n"
-                f"➽ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ [ {percentage}% ] \n"
-                f" ✄ вσт σƒ  : {ALIVE_NAME} \n"
+               "✨ **ɪɴꜰᴏʀᴍᴀsɪ ᴅʏɴᴏ ʜᴇʀᴏᴋᴜ :**\n"
+                "╔════════════════════╗\n"
+                f"• **ᴘᴇɴɢɢᴜɴᴀ ᴅʏɴᴏ sᴀᴀᴛ ɪɴɪ :**\n"
+                f"  `{AppHours}`**ᴊᴀᴍ**  `{AppMinutes}`**ᴍᴇɴɪᴛ**  "
+                f"**|**  [`{AppPercentage}`**%**]"
+                "\n◖════════════════════◗\n"
+                "• **sɪsᴀ ᴋᴏᴜᴛᴀ ᴅʏɴᴏ ʙᴜʟᴀɴ ɪɴɪ :**\n"
+                f"  `{hours}`**ᴊᴀᴍ**  `{minutes}`**ᴍᴇɴɪᴛ**  "
+                f"**|**  [`{percentage}`**%**]\n"
+                f"• **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  "
+                "\n╚════════════════════╝"
             )
             await asyncio.sleep(20)
             await event.delete()
