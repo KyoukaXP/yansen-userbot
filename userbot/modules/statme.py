@@ -8,7 +8,6 @@ from telethon.tl.custom import Dialog
 from telethon.tl.types import Channel, Chat, User
 
 from userbot.utils import lepin_cmd
-from userbot import CMD_HELP, CMD_HANDLER as cmd
 
 logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
