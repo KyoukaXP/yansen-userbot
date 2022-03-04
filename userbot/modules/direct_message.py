@@ -1,11 +1,11 @@
-from userbot import CMD_HELP
-from userbot.events import register
+from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot.utils import lepin_cmd
 
 # Ported By @VckyouuBitch
 # FROM skyzu-userbot (https://github.com/Skyzu/skyzu-userbot)
 
 
-@register(outgoing=True, pattern=r"^\.(?:dm)\s?(.*)?")
+@lepin_cmd(pattern="(?:dm)\s?(.*)?")
 async def remoteaccess(event):
 
     p = event.pattern_match.group(1)
@@ -36,7 +36,7 @@ async def remoteaccess(event):
 
 CMD_HELP.update(
     {
-        "message": "`.dm`\
+        "message": "`{cmd}dm`\
     \nMengirim Pesan Dengan Jarak Jauh Dengan .dm <username> <pesan>."
     }
 )
