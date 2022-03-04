@@ -7,7 +7,7 @@ from userbot import CMD_HELP, bot
 from userbot.utils import lepin_cmd
 
 
-@lepin_cmd(pattern="sg(?: |$)(.*)")
+@lepin_cmd(pattern="sg$")
 async def lastname(steal):
     if steal.fwd_from:
         return
