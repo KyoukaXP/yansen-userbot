@@ -94,7 +94,7 @@ DEVS = (
     1954289347,
     5090127753,
     1731365899,
-    )
+)
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2004395661").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -529,7 +529,11 @@ with bot:
                     f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n\n"
                     f"sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ⚡\n",
                     buttons=[
-                        [Button.url("ʀᴇᴘᴏ​", "https://github.com/Yansensad/yansen-userbot")],
+                        [
+                            Button.url(
+                                "ʀᴇᴘᴏ​", "https://github.com/Yansensad/yansen-userbot"
+                            )
+                        ],
                     ],
                 )
 
