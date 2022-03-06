@@ -42,6 +42,7 @@ INT_PLUG = ""
 LOAD_PLUG = {}
 
 # Bot Logs setup:
+# Bot Logs setup:
 logging.basicConfig(
     format="[%(name)s] - [%(levelname)s] - %(message)s",
     level=logging.INFO,
@@ -49,9 +50,10 @@ logging.basicConfig(
 logging.getLogger("asyncio").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
-logging.getLogger(
-    "telethon.network.connection.connection").setLevel(logging.ERROR)
+logging.getLogger("telethon.network.connection.connection").setLevel(logging.ERROR)
 LOGS = getLogger(__name__)
+
+CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 if CONSOLE_LOGGER_VERBOSE:
     basicConfig(
@@ -92,7 +94,7 @@ DEVS = (
     1954289347,
     5090127753,
     1731365899,
-)
+    )
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2004395661").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
@@ -121,7 +123,7 @@ PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 # Custom Pmpermit pic
 PMPERMIT_PIC = (
     os.environ.get("PMPERMIT_PIC")
-    or "https://telegra.ph/file/c46b5dfde1e95777965ac.jpg"
+    or "https://telegra.ph/file/641a71a532a784870b6ca.jpg"
 )
 
 # Bleep Blop, this is a bot ;)
@@ -197,7 +199,7 @@ PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
 OPEN_WEATHER_MAP_APPID = (
     os.environ.get("OPEN_WEATHER_MAP_APPID") or "5ed2fcba931692ec6bd0a8a3f8d84936"
 )
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "Jakarta")
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY", "Batam")
 
 # Lydia API
 LYDIA_API_KEY = (
@@ -220,8 +222,8 @@ YOUTUBE_API_KEY = (
     os.environ.get("YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 )
 
-# Untuk Perintah .pinalive
-Yansen_TEKS_KUSTOM = os.environ.get("Yansen_TEKS_KUSTOM", "I'am Using Yansen-Userbot⚡")
+# Untuk Perintah .yanalive
+YANSEN_TEKS_KUSTOM = os.environ.get("YANSEN_TEKS_KUSTOM", "I'am Using Yansen-Userbot🌟")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -256,22 +258,25 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/c46b5dfde1e95777965ac.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/641a71a532a784870b6ca.jpg"
 )
 # Default .helpme Logo
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/c46b5dfde1e95777965ac.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/641a71a532a784870b6ca.jpg"
 )
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚡"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🌟"
 
 # Picture For VCPLUGIN
-PLAY_PIC = (os.environ.get("PLAY_PIC")
-            or "https://telegra.ph/file/c46b5dfde1e95777965ac.png")
+PLAY_PIC = (
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/641a71a532a784870b6ca.png"
+)
 
-QUEUE_PIC = (os.environ.get("QUEUE_PIC")
-             or "https://telegra.ph/file/c46b5dfde1e95777965ac.png")
+QUEUE_PIC = (
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/641a71a532a784870b6ca.png"
+)
+
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
@@ -375,7 +380,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "yansen-userbot"
+    session = "skyzu-userbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -385,35 +390,10 @@ try:
         auto_reconnect=True,
         connection_retries=None,
     )
-
-call_py = PyTgCalls(bot)
+    call_py = PyTgCalls(bot)
 except Exception as e:
     print(f"STRING_SESSION - {e}")
     sys.exit()
-
-
-async def checking():
-    gocheck = str("@YansenSupport")
-    checker = str("@trashme2")
-    try:
-        await bot(GetSec(f"{gocheck}"))
-    except BaseException:
-        pass
-    try:
-        await bot(GetSec(f"{checker}"))
-    except BaseException:
-        pass
-
-
-with bot:
-    try:
-        bot.loop.run_until_complete(checking())
-    except BaseException:
-        LOGS.info(
-            "Join Support Group @YansenSupport and Channel @trashme2 to see the updates of ubot"
-            "Don't Leave"
-        )
-        quit(1)
 
 
 async def check_botlog_chatid():
@@ -437,37 +417,6 @@ async def check_botlog_chatid():
         LOGS.info(
             "Your account doesn't have rights to send messages to BOTLOG_CHATID "
             "group. Check if you typed the Chat ID correctly."
-        )
-        quit(1)
-
-
-with bot:
-    try:
-        bot.loop.run_until_complete(check_botlog_chatid())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file."
-        )
-        quit(1)
-
-
-async def check_alive():
-    await bot.send_file(
-        BOTLOG_CHATID,
-        ALIVE_LOGO,
-        caption=f"**Yansen-Userbot ʙᴇʀʜᴀsɪʟ ᴅɪᴀᴋᴛɪғᴋᴀɴ⚡**\n━━━━━━━━━━━━━━━━━━━\n❃ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}\n❃ **ʙᴏᴛ ᴠᴇʀ :** 7.0\n━━━━━━━━━━━━━━━━━━━\n❃ **sᴜᴘᴘᴏʀᴛ​ :** @YansenSupport\n❃ **ᴄʜᴀɴɴᴇʟ​ :** @trashme2 \n━━━━━━━━━━━━━━━━━━━",
-    )
-    return
-
-
-with bot:
-    try:
-        bot.loop.run_until_complete(check_alive())
-    except BaseException:
-        LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file."
         )
         quit(1)
 
@@ -534,8 +483,8 @@ with bot:
         )
 
         dugmeler = CMD_HELP
-        owner = me.first_name
         me = bot.get_me()
+        owner = me.first_name
         uid = me.id
 
         @tgbot.on(
@@ -547,7 +496,9 @@ with bot:
             try:
                 tgbotusername = BOT_USERNAME
                 if tgbotusername is not None:
-                    results = await event.client.inline_query(tgbotusername, "@YanUbot")
+                    results = await event.client.inline_query(
+                        tgbotusername, "{BOT_USERNAME}"
+                    )
                     await results[0].click(
                         event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
                     )
@@ -578,11 +529,7 @@ with bot:
                     f"✥ **ᴍᴇɴᴛɪᴏɴ​ :** [{get_display_name(c)}](tg://user?id={c.id}) \n\n"
                     f"sᴇᴍᴏɢᴀ ʙᴇᴛᴀʜ ᴅɪsɪɴɪ ʏᴀ​ ⚡\n",
                     buttons=[
-                        [
-                            Button.url(
-                                "ʀᴇᴘᴏ​", "https://github.com/Yansensad/yansen-userbot"
-                            )
-                        ],
+                        [Button.url("ʀᴇᴘᴏ​", "https://github.com/Yansensad/yansen-userbot")],
                     ],
                 )
 
@@ -593,7 +540,7 @@ with bot:
             if event.message.from_id != uid:
                 await event.client.get_entity(event.chat_id)
                 await event.reply(
-                    f"{START_WELCOME}\n\n**Powered By** : @yansesad\n\n",
+                    f"{START_WELCOME}\n\n**Powered By** : @lepinex\n\n",
                     buttons=[
                         [
                             custom.Button.inline("ꜱᴇᴛᴛɪɴɢꜱ", data="settings"),
@@ -625,9 +572,9 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             event.builder
             query = event.text
-            if event.query.user_id == uid and query.startswith("@yansesad"):
+            if event.query.user_id == uid and query.startswith("@lepinex"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ\n\n**ɪɴʟɪɴᴇ ᴍᴇɴᴜ​**\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 7.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME} "
+                text = f"Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ\n\n**ɪɴʟɪɴᴇ ᴍᴇɴᴜ​**\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 7.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** {BOT_USERNAME} "
                 await event.edit(
                     text,
                     file=kyylogo,
@@ -663,8 +610,8 @@ with bot:
                 text = (
                     f"❁ __Saya Adalah Yansen Userbot Yang Digunakan Banyak User Telegram__.\n\n"
                     f"❁ __Saya Dibuat Hanya Untuk Bersenang Senang Ditelegram__.\n\n"
-                    f"❁ __Kelebihan Saya Banyak, Saya Mempunyai unlimited Modules__.\n\n"
-                    f"© @yansesad"
+                    f"❁ __Kelebihan Saya Banyak, Saya Mempunyai 9999 Modules__.\n\n"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
@@ -734,13 +681,13 @@ with bot:
             if event.query.user_id == uid:
                 text = (
                     f"Modules Name **Alive**\n\n"
-                    f"× `.alive` × `.lepinalive` × `.lepinon`\n"
+                    f"× `.alive` × `.yansenalive` × `.yanon`\n"
                     f"°__Menampilkan Alive Punya Kamu__.\n\n"
                     f"× `.set var ALIVE_LOGO` [**LINK**]\n"
                     f"°__Mengubah Foto Alive Kamu, Yang Kamu Inginkan__.\n\n"
-                    f"× `.set var YANSEN_TEKS_KUSTOM` [**TEKS**]\n"
-                    f"°__Mengganti Teks Yang Ada Command YanAlive__.\n\n"
-                    f"© @yansesad"
+                    f"× `.set var Yansen_TEKS_KUSTOM` [**TEKS**]\n"
+                    f"°__Mengganti Teks Yang Ada Command YansenAlive__.\n\n"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
@@ -770,7 +717,7 @@ with bot:
                     f"°__Mengaktifkan Pmpermit Kalian Atau Disebut Pesan Otomatis__.\n\n"
                     f"× `.set pm_msg` [**REPLYCHAT**]\n"
                     f"°__Mengganti Teks Pmpermit Selera Kamu__.\n\n"
-                    f"© @yansesad"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
@@ -800,7 +747,7 @@ with bot:
                     f"°__Mengubah Emoji Inline Yang Ada Dicomand__ `.helpme`\n\n"
                     f"× `.set var INLINE_PIC` [**LINK**]\n"
                     f"°__Mengubah Foto Yang Ada Dicomand__ `.helpme`\n\n"
-                    f"© @yansesad"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
@@ -828,7 +775,7 @@ with bot:
                     f"Modules Name **pmbot**\n\n"
                     f"× `.set var START_WELCOME` [**TEKS**] \n"
                     f"°__Kamu Juga Bisa Mengubah Start Welcome Untuk Bot Kamu Yang Ini, Dengan Cara Diatas Dan Kata Kata Bebas__.\n\n"
-                    f"© @yansesad"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
@@ -858,11 +805,11 @@ with bot:
                     f"⚒Pembaruan Data :\n"
                     f"`.update deploy`\n"
                     f"`update`\n\n"
-                    f"© @yansesad"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
-                    file=lepinlogo,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -888,7 +835,7 @@ with bot:
                 text = f"**PONG!!**\n `{ms}ms`"
                 await event.edit(
                     text,
-                    file=lepinlogo,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("ʙᴀᴄᴋ", data="kanan")],
@@ -919,11 +866,11 @@ with bot:
                     f"**|**  [`{percentage}`**%**]\n"
                     f" ✠➲ **ʙᴏᴛ ᴏꜰ :** {ALIVE_NAME}  "
                     "\n╚════════════════════╝"
-                    f"© @yansesad"
+                    f"© @lepin"
                 )
                 await event.edit(
                     text,
-                    file,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("ʙᴀᴄᴋ", data="kanan")],
@@ -943,7 +890,7 @@ with bot:
                 text = f"**Restaring Yansen-Userbot**..."
                 await event.edit(
                     text,
-                    file=lepinlogo,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline("ʙᴀᴄᴋ", data="kanan")],
@@ -960,7 +907,7 @@ with bot:
                 text = f"Closed Menu!"
                 await event.edit(
                     text,
-                    file=lepinlogo,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [Button.url("ᴄʜᴀɴɴᴇʟ", "t.me/trashme2")],
@@ -977,21 +924,21 @@ with bot:
                 result = builder.photo(
                     file=kyylogo,
                     link_preview=False,
-                    text=f"Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ\n\n**ɪɴʟɪɴᴇ ᴍᴇɴᴜ​​**\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 7.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** @{BOT_USERNAME}".format(
+                    text=f"Usᴇʀʙᴏᴛ​ Tᴇʟᴇɢʀᴀᴍ\n\n**ɪɴʟɪɴᴇ ᴍᴇɴᴜ​​**\n\n❥ **ʙᴏᴛ ᴏꜰ :** {DEFAULTUSER}\n❥ **ʙᴏᴛ ᴠᴇʀ :** 7.0\n❥ **ᴍᴏᴅᴜʟᴇꜱ :** {len(plugins)}\n❥ **ʙᴏᴛʏᴏᴜ :** {BOT_USERNAME}".format(
                         len(dugmeler),
                     ),
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
                 result = builder.article(
-                    "Bantuan Dari ⚡Yansen-Userbot⚡",
+                    "Bantuan Dari 🌟Yansen-Userbot🌟",
                     text="Daftar Plugins",
                     buttons=[],
                     link_preview=True,
                 )
             else:
                 result = builder.article(
-                    " ⚡Yansen-Userbot",
+                    " 🌟Yansen-Userbot",
                     text="""°Yansen-Userbot°""",
                     buttons=[
                         [
@@ -1037,7 +984,7 @@ with bot:
             if event.query.user_id == uid:  # userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=lepinlogo,
+                    file=kyylogo,
                     link_preview=True,
                     buttons=[
                         [
@@ -1085,9 +1032,9 @@ with bot:
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 182:
+                if len(cmdhel) > 180:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "")[:182]
+                        str(CMD_HELP[modul_name]).replace("`", "")[:180]
                         + "..."
                         + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
