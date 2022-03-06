@@ -534,7 +534,7 @@ with bot:
         )
 
         dugmeler = CMD_HELP
-        owner = user.first_name
+        owner = me.first_name
         me = bot.get_me()
         uid = me.id
 
