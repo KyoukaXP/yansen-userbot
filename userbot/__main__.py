@@ -19,6 +19,7 @@ from userbot import (
     LOGS,
     UPSTREAM_REPO_BRANCH,
     bot,
+    call_py,
 )
 from userbot.modules import ALL_MODULES
 from userbot.utils import autobot
@@ -28,6 +29,7 @@ try:
     for module_name in ALL_MODULES:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
+    call_py.start()
     LOGS.info(
         f"Jika Reponya Bermasalah Silahkan Lapor Ke @lepinex. [ BOT TELAH DIAKTIFKAN! ]"
     )
