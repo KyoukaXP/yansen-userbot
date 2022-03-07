@@ -417,7 +417,7 @@ async def vc_volume(event):
     chat_id = event.chat_id
 
     if not admin and not creator:
-        return await edit_delete(event, f"**Maaf {owner} Bukan Admin 👮**", 30)
+        return await edit_delete(event, f"**Maaf anda Bukan Admin 👮**", 30)
 
     if chat_id in QUEUE:
         try:
