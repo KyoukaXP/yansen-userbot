@@ -11,7 +11,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
 
 
-@lepin_cmd(pattern="g$")
+@lepin_cmd(pattern="g(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(f"**JAKA SEMBUNG BAWA GOLOK**")
@@ -22,7 +22,7 @@ async def typewriter(typew):
 # Pantun
 
 
-@lepin_cmd(pattern="p$")
+@lepin_cmd(pattern="p(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Salam Dulu Biar Sopan...`")
@@ -33,7 +33,7 @@ async def typewriter(typew):
 # Salam
 
 
-@lepin_cmd(pattern="l$")
+@lepin_cmd(pattern="l(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Kalo Orang Salam Itu Dijawab...`")
@@ -44,38 +44,38 @@ async def typewriter(typew):
 # Menjawab Salam
 
 
-@lepin_cmd(pattern="kenalin$")
+@lepin_cmd(pattern="kenalin(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("☑️ `putra wibu`")
+    await typew.edit("☑️ `Kenzhu wibu`")
     sleep(2)
-    await typew.edit("✅ `putra wibu`")
+    await typew.edit("✅ `Kenzhu wibu`")
     sleep(1)
-    await typew.edit("☑️ `duta stres`")
+    await typew.edit("☑️ `Oura stres`")
     sleep(2)
-    await typew.edit("✅ `duta stres`")
+    await typew.edit("✅ `Oura stres`")
     sleep(1)
-    await typew.edit("☑️ `fajar Gajelas`")
+    await typew.edit("☑️ `Lynx Gajelas`")
     sleep(2)
-    await typew.edit("✅ `fajar Gajelas`")
+    await typew.edit("✅ `Lynx Gajelas`")
     sleep(1)
-    await typew.edit("☑️ `ken Wibu Sangean`")
+    await typew.edit("☑️ `Dappa Wibu Sangean`")
     sleep(2)
-    await typew.edit("✅ `ken Wibu Sangean`")
+    await typew.edit("✅ `Dappa Wibu Sangean`")
     sleep(1)
-    await typew.edit("☑️ `xxinu Autis`")
+    await typew.edit("☑️ `Ehan Autis`")
     sleep(2)
-    await typew.edit("✅ `xxinu Autis`")
+    await typew.edit("✅ `Ehan Autis`")
     sleep(1)
     await typew.edit(
-        "`⚡ Cuma Lepin Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`"
+        "`⚡ Cuma lepin Yang Paling Waras, Baik Hati, Dan Tidak Sombong :v`"
     )
 
 
 # King Userbot Support
 
 
-@lepin_cmd(pattern="istigfar$")
+@lepin_cmd(pattern="istigfar(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Heh Kamu Gaboleh Begitu...`")
@@ -86,7 +86,7 @@ async def perkenalan(event):
 # Istigfar
 
 
-@lepin_cmd(pattern="virtual$")
+@lepin_cmd(pattern="virtual(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**OOOO**")
@@ -108,7 +108,7 @@ async def typewriter(typew):
     await typew.edit("**KASIAN MANA MASIH MUDA**")
 
 
-@lepin_cmd(pattern="perkenalkan$")
+@lepin_cmd(pattern="perkenalkan(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
     await event.edit(f"`Hai Guys , Perkenalkan Nama Gw {DEFAULTUSER}`")
@@ -121,34 +121,6 @@ async def perkenalan(event):
 
 
 # Perkenalan
-
-
-@lepin_cmd(pattern="ahah$")
-async def typewriter(typew):
-    typew.pattern_match.group(1)
-    sleep(1)
-    await typew.edit("**Ehh Lu Mau Tau Gak?**")
-    sleep(1)
-    await typew.edit("**Sih Lepin mukanya mirip babi😂**")
-    sleep(1)
-    await typew.edit("**Ehh Gak Bercanda Deh😁**")
-    sleep(1)
-    await typew.edit("**Emang Bener Sih Lepin Mukanya Kaya Babi🙈**")
-    sleep(1)
-    await typew.edit("**Ehh Engga Deh,Lepin Kan Ganteng Kaya Artis Korea😄**")
-    sleep(1)
-    await typew.edit("**Tapi Boong😂**")
-    sleep(1)
-    await typew.edit("**HAHAHAHAHAHAHA**")
-    sleep(1)
-    await typew.edit("**Udah Ahh Takut Lepin Nangis Minta Balon😂**")
-    sleep(1)
-    await typew.edit("**Maaf Ya Lepin Ganteng Bercanda😁**")
-    sleep(1)
-    await typew.edit("**Tapi Bo'ong Hiyahiyahiya**")
-
-
-# Create by @skyzuex
 
 
 CMD_HELP.update(
@@ -164,8 +136,6 @@ CMD_HELP.update(
         \nUsage : Member Goblok\
         \n\n Cmd : `{cmd}kenalin`\
         \nUsage : Awokwok\
-        \n\n Cmd : `{cmd}ahah`\
-        \nUsage : liat sendiri\
         \n\n Cmd : `{cmd}p`\
         \nUsage : Untuk Memberi Salam\
     "
