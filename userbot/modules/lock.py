@@ -9,9 +9,9 @@ from telethon.tl.types import ChatBannedRights
 
 from userbot import CMD_HELP
 from userbot.utils import lepin_cmd
+from userbot import CMD_HANDLER as cmd
 
-
-@lepin_cmd(pattern="lock$")
+@lepin_cmd(pattern="lock ?(.*)")
 async def locks(event):
     input_str = event.pattern_match.group(1).lower()
     peer_id = event.chat_id
@@ -100,7 +100,7 @@ async def locks(event):
         return
 
 
-@lepin_cmd(pattern="unlock$")
+@lepin_cmd(pattern="unlock ?(.*)")
 async def rem_locks(event):
     input_str = event.pattern_match.group(1).lower()
     peer_id = event.chat_id
