@@ -9,7 +9,7 @@ from telethon.tl.types import ChatBannedRights
 
 from userbot import CMD_HELP
 from userbot.utils import lepin_cmd
-from userbot import CMD_HANDLER as cmd
+
 
 @lepin_cmd(pattern="lock ?(.*)")
 async def locks(event):
