@@ -2,7 +2,6 @@ from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, DEVS, bot
 from userbot.events import register
@@ -81,7 +80,7 @@ async def handler(tele):
                             return
 
 
-@lepin_cmd(pattern="gban$")
+@lepin_cmd(pattern="gban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
@@ -92,7 +91,7 @@ async def gben(userbot):
     else:
         dark = await dc.edit("`Memproses Global Banned Pengguna Ini!!`")
     me = await userbot.client.get_me()
-    await dark.edit(f"`Global Banned Akan Segera Aktif Monyet!!`")
+    await dark.edit(f"`Global Banned Akan Segera Aktif Tuan!!!`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -113,7 +112,9 @@ async def gben(userbot):
         return await dark.edit(f"`Terjadi Kesalahan`")
     if user:
         if user.id in DEVS:
-            return await dark.edit(f"`LO GABISA GBAN TUHAN GOBLOK😝`")
+            return await dark.edit(
+                f"**Anda Tidak Bisa Melakukan Global Banned, Karena dia pembuatku**🤪"
+            )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
         except BaseException:
@@ -131,7 +132,7 @@ async def gben(userbot):
             try:
                 await userbot.client.edit_permissions(i, user, view_messages=False)
                 a += 1
-                await dark.edit(f"`Global Banned Si Babu Aktif Ye Nyet✅`")
+                await dark.edit(f"`GUE GBAN LO ANJING`")
             except BaseException:
                 b += 1
     else:
@@ -144,23 +145,26 @@ async def gben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**Perintah:** `{ALIVE_NAME}`\n**Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**Aksi:** `Global Banned`"
+        r"\\**#GBanned_User**//"
+        f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
+        f"**User ID:** `{user.id}`\n"
+        f"**Action:** `Global Banned`"
     )
 
 
-@lepin_cmd(pattern="ungban$")
+@lepin_cmd(pattern="ungban(?: |$)(.*)")
 @register(incoming=True, from_users=DEVS, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`Membatalkan Perintah Global Banned Pengguna Ini`")
+        dark = await dc.reply("`Ungbanning...`")
     else:
-        dark = await dc.edit("`Membatalkan Perintah Global Banned`")
+        dark = await dc.edit("`Ungbanning...`")
     me = await userbot.client.get_me()
     await dark.edit(
-        f"`Memulai Membatalkan Perintah Global Banned, Jangan Jadi Bocah Hina Lagi Ya!!!`"
+        f"`YAH KENA GBAN, GUE BUKAIN DULU DAH, MAKANYA JANGAN JADI ORANG TOLOL`"
     )
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
@@ -183,7 +187,7 @@ async def gunben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                "**Pengguna Ini tidak bisa di Blacklist, Karna Dia adalah Tuhan mu** 🤪"
+                "**Pengguna Ini tidak bisa di Blacklist, Karna Dia adalah pembuatku** 🤪"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
@@ -215,7 +219,10 @@ async def gunben(userbot):
     except BaseException:
         pass
     return await dark.edit(
-        f"**Perintah :** `{ALIVE_NAME}`\n**Pengguna:** [{user.first_name}](tg://user?id={user.id})\n**Aksi:** `Membatalkan Global Banned`"
+        r"\\**#UnGbanned_User**//"
+        f"\n\n**First Name:** [{user.first_name}](tg://user?id={user.id})\n"
+        f"**User ID:** `{user.id}`\n"
+        f"**Action:** `UnGBanned by {me.first_name}`"
     )
 
 
