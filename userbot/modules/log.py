@@ -12,7 +12,7 @@ from userbot import CMD_HELP, LOGS, bot
 from userbot.modules.sql_helper import no_log_pms_sql
 from userbot.modules.sql_helper.globals import addgvar, gvarstatus
 from userbot.modules.vcg import vcmention
-from userbot.utils import _format, edit_delete, edit_or_reply, skyzu_cmd
+from userbot.utils import _format, edit_delete, edit_or_reply, lepin_cmd
 from userbot.utils.tools import media_type
 
 
@@ -43,7 +43,7 @@ async def logaddjoin(sky):
         text = f"📨 **#LOG_GABUNG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
     else:
         return
-    await sky.client.send_message(BOTLOG_CHATID, text)
+    await pin.client.send_message(BOTLOG_CHATID, text)
 
 
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -121,7 +121,7 @@ async def log_tagged_messages(yahaha):
         )
 
 
-@skyzu_cmd(pattern="save(?: |$)(.*)")
+@lepin_cmd(pattern="save(?: |$)(.*)")
 async def log(log_text):
     if BOTLOG_CHATID:
         if log_text.reply_to_msg_id:
@@ -143,7 +143,7 @@ async def log(log_text):
         )
 
 
-@skyzu_cmd(pattern="log$")
+@lepin_cmd(pattern="log$")
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -154,7 +154,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@skyzu_cmd(pattern="nolog$")
+@lepin_cmd(pattern="nolog$")
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -165,7 +165,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@skyzu_cmd(pattern="pmlog (on|off)$")
+@lepin_cmd(pattern="pmlog (on|off)$")
 async def set_pmlog(event):
     if BOTLOG_CHATID == -100:
         return await edit_delete(
@@ -195,7 +195,7 @@ async def set_pmlog(event):
         await edit_or_reply(event, "**PM LOG Sudah Dimatikan**")
 
 
-@skyzu_cmd(pattern="gruplog (on|off)$")
+@lepin_cmd(pattern="gruplog (on|off)$")
 async def set_gruplog(event):
     if BOTLOG_CHATID == -100:
         return await edit_delete(
