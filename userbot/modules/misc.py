@@ -93,10 +93,11 @@ async def killdabot(event):
 @lepin_cmd(pattern="readme$")
 async def reedme(e):
     await e.edit(
-                        "Here's Something for You to Read :\n"
-                        "\n[✨ yansen-userbot Repo](https://github.com/Yansensad/yansen-userbot/blob/Yansen-Userbot/README.md)"
-                        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-                        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
+        "Here's Something for You to Read :\n"
+        "\n[✨ yansen-userbot Repo](https://github.com/Yansensad/yansen-userbot/blob/Yansen-Userbot/README.md)"
+        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
+        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)"
+    )
 
 
 @lepin_cmd(pattern="repeat (.*)")
@@ -118,14 +119,14 @@ async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
         "**Hey**, I am using **✨Yansen-Userbot✨** \n"
-                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
-                        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](https://github.com/Yansensad/yansen-userbot)\n"
-                        "➣ **Owner Bot       :** [Lepin](t.me/lepinex)\n"
-                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
-                        "➣ **Support           :** [sᴜᴘᴘᴏʀᴛ](https://t.me/pantekyks)\n"
-                        "➣ **Channel           :** [ᴄʜᴀɴɴᴇʟ](https://t.me/trashme2)\n"
-                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
-)
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](https://github.com/Yansensad/yansen-userbot)\n"
+        "➣ **Owner Bot       :** [Lepin](t.me/lepinex)\n"
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+        "➣ **Support           :** [sᴜᴘᴘᴏʀᴛ](https://t.me/pantekyks)\n"
+        "➣ **Channel           :** [ᴄʜᴀɴɴᴇʟ](https://t.me/trashme2)\n"
+        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+    )
 
 
 @lepin_cmd(pattern="raw$")
