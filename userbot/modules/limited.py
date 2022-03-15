@@ -3,10 +3,10 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="limit(?: |$)(.*)")
+@lepin_cmd(pattern="limit(?: |$)(.*)")
 async def _(event):
     await event.edit("`Checking If You Are Limited...`")
     async with bot.conversation("@SpamBot") as conv:
