@@ -12,7 +12,7 @@
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
@@ -28,10 +28,11 @@ GCAST_BLACKLIST = [
     -1001109837870,  # TelegramBotIndonesia
     -1001752592753,  # Skyzusupport
     -1001380293847,  # NastySupport
+    -1001704645461,  # JametSupport
 ]
 
 
-@skyzu_cmd(pattern="gcast(?: |$)(.*)")
+@lepin_cmd(pattern="gcast(?: |$)(.*)")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -60,7 +61,7 @@ async def gcast(event):
     )
 
 
-@skyzu_cmd(pattern="gucast(?: |$)(.*)")
+@lepin_cmd(pattern="gucast(?: |$)(.*)")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if xx:
