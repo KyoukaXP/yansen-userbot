@@ -24,12 +24,12 @@ from youtube_dl.utils import (
 from youtubesearchpython import SearchVideos
 
 from userbot import ALIVE_NAME, CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
-@skyzu_cmd(pattern="song (.*)")
+@lepin_cmd(pattern="song (.*)")
 async def download_video(event):
     a = event.text
     if len(a) >= 5 and a[5] == "s":
@@ -138,7 +138,7 @@ Connected to server...
         pass
 
 
-@skyzu_cmd(pattern="vsongs (.*)")
+@lepin_cmd(pattern="vsongs (.*)")
 async def download_vsong(event):
     x = await event.edit("Processing..")
     url = event.pattern_match.group(1)
@@ -213,7 +213,7 @@ async def download_vsong(event):
     await x.delete()
 
 
-@skyzu_cmd(pattern="lirik (.*)")
+@lepin_cmd(pattern="lirik (.*)")
 async def original(event):
     if not event.pattern_match.group(1):
         return await event.edit(
