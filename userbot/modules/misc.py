@@ -15,14 +15,14 @@ from PIL import Image
 from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, UPSTREAM_REPO_URL, bot
-from userbot.utils import skyzu_cmd, time_formatter
+from userbot.utils import lepin_cmd, time_formatter
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 REPOLINK = (
     str(UPSTREAM_REPO_URL)
     if UPSTREAM_REPO_URL
-    else "https://github.com/Askarbot/Skyzuu-Userbot"
+    else "https://github.com/Yansensad/yansen-userbot"
 )
 # ============================================
 
@@ -46,7 +46,7 @@ async def randomise(items):
     )
 
 
-@skyzu_cmd(pattern="sleep ([0-9]+)$")
+@lepin_cmd(pattern="sleep ([0-9]+)$")
 async def sleepybot(time):
     """For .sleep command, let the userbot snooze for a few second."""
     counter = int(time.pattern_match.group(1))
@@ -61,10 +61,10 @@ async def sleepybot(time):
     await time.edit("`OK, I'm awake now.`")
 
 
-@skyzu_cmd(pattern="shutdown$")
+@lepin_cmd(pattern="shutdown$")
 async def killdabot(event):
     """For .shutdown command, shut the bot down."""
-    await event.edit("**Mematikan Skyzu-Userbot....**")
+    await event.edit("**Mematikan Yansen-Userbot....**")
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
@@ -74,9 +74,9 @@ async def killdabot(event):
     await bot.disconnect()
 
 
-@skyzu_cmd(pattern="restart$")
+@lepin_cmd(pattern="restart$")
 async def killdabot(event):
-    await event.edit("**Restarting Skyzu-Userbot...**")
+    await event.edit("**Restarting Yansen-Userbot...**")
     await asyncio.sleep(10)
     await event.delete()
     if BOTLOG:
@@ -90,17 +90,16 @@ async def killdabot(event):
     exit()
 
 
-@skyzu_cmd(pattern="readme$")
+@lepin_cmd(pattern="readme$")
 async def reedme(e):
     await e.edit(
-        "Here's Something for You to Read :\n"
-        "\n[⚡ Skyzu-UserBot Repo](https://github.com/Askarbot/Skyzuu-Userbot/blob/skyzu-userBot/README.md)"
-        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
-        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)"
-    )
+                        "Here's Something for You to Read :\n"
+                        "\n[✨ yansen-userbot Repo](https://github.com/Yansensad/yansen-userbot/blob/Yansen-Userbot/README.md)"
+                        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
+                        "\n[Special - Note](https://telegra.ph/Special-Note-11-02)")
 
 
-@skyzu_cmd(pattern="repeat (.*)")
+@lepin_cmd(pattern="repeat (.*)")
 async def repeat(rep):
     cnt, txt = rep.pattern_match.group(1).split(" ", 1)
     replyCount = int(cnt)
@@ -114,19 +113,22 @@ async def repeat(rep):
     await rep.edit(replyText)
 
 
-@skyzu_cmd(pattern="repo$")
+@lepin_cmd(pattern="repo$")
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        "**Usᴇʀʙᴏᴛ Tᴇʟᴇɢʀᴀᴍ**\n"
-        "𝗥𝗲𝗽𝗼 🇮🇩\n"
-        "╰⎆ [𝐒𝐊𝐘𝐙𝐔-𝐔𝐒𝐄𝐑𝐁𝐎𝐓​](https://github.com/Skyzu/skyzu-userbot)\n"
-        "❏ **Oᴡɴᴇʀ​** ⎆ [Skyzu](t.me/skyzu)\n"
-        "❏ **Sᴜᴘᴘᴏʀᴛ**​ ⎆ [groups](t.me/skyzusupport)\n"
-    )
+        "**Hey**, I am using **✨Yansen-Userbot✨** \n"
+                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+                        "➣ **Repo Userbot :** [ɢɪᴛʜᴜʙ](https://github.com/Yansensad/yansen-userbot)\n"
+                        "➣ **Owner Bot       :** [Lepin](t.me/lepinex)\n"
+                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+                        "➣ **Support           :** [sᴜᴘᴘᴏʀᴛ](https://t.me/pantekyks)\n"
+                        "➣ **Channel           :** [ᴄʜᴀɴɴᴇʟ](https://t.me/trashme2)\n"
+                        "卍━━━━━━━━━━━━━━━━━━━━━━卍\n"
+)
 
 
-@skyzu_cmd(pattern="raw$")
+@lepin_cmd(pattern="raw$")
 async def raw(event):
     the_real_message = None
     reply_to_id = None
@@ -150,7 +152,7 @@ async def raw(event):
         )
 
 
-@skyzu_cmd(pattern="reverse(?: |$)(\d*)")
+@lepin_cmd(pattern="reverse(?: |$)(\d*)")
 async def okgoogle(img):
     """For .reverse command, Google search images and stickers."""
     if os.path.isfile("okgoogle.png"):
