@@ -2,7 +2,7 @@
 
 from time import sleep
 
-from userbot import CMD_HELP, CMD_HANDLER as cmd
+from userbot import CMD_HELP
 from userbot.utils import lepin_cmd
 
 
