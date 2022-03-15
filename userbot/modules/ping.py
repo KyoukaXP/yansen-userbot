@@ -29,12 +29,12 @@ absen = [
 ]
 
 hy = [
-         "Iya kenapa lepin",
-         "Hy sayang",
-         "Hy lepin ganteng",
-         "Ututu ada sayang aku",
-         "Iya hy juga sayang aku",
-         "Hy my heart just for lepin",
+    "Iya kenapa lepin",
+    "Hy sayang",
+    "Hy lepin ganteng",
+    "Ututu ada sayang aku",
+    "Iya hy juga sayang aku",
+    "Hy my heart just for lepin",
 ]
 
 
@@ -182,7 +182,7 @@ async def _(ping):
 async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    pim = await edit_or_reply(ping, "**𖣘**")
+    await edit_or_reply(ping, "**𖣘**")
     await pin.edit("**𖣘𖣘**")
     await pin.edit("**𖣘𖣘𖣘**")
     await pin.edit("**◕‿- PONG!**")
