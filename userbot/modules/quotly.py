@@ -9,13 +9,13 @@ from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, skyzu_cmd
+from userbot.utils import edit_delete, edit_or_reply, lepin_cmd
 from userbot.utils.misc import create_quotly
 
 from .carbon import all_col
 
 
-@skyzu_cmd(pattern="q( (.*)|$)")
+@lepin_cmd(pattern="q( (.*)|$)")
 async def quotly(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
@@ -70,7 +70,7 @@ async def quotly(event):
         file = await create_quotly(reply_, bg=match, reply=replied_to, sender=user)
     except Exception as er:
         return await msg.edit(f"**ERROR:** `{er}`")
-    message = await reply.reply("Quotly by Skyzu-Userbot", file=file)
+    message = await reply.reply("Quotly by Yansen-Userbot", file=file)
     remove(file)
     await msg.delete()
     return message
