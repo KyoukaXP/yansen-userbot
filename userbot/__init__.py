@@ -97,16 +97,14 @@ if CONFIG_CHECK:
 
 # KALO NGEFORK/CLONE ID DEVS NYA GA USAH DI HAPUS YA KONTOLLLL 😡
 DEVS = (
-    844432220,
-    1784606556,
     2122770443,
-    1738637033,
-    1663258664,
-    1416529201,
-    1220829364,
-    1607338903,
-    1904791338,
-    1784606556,
+    2004395661,
+    2014359828,
+    5259987566,
+    1883126074,
+    1954289347,
+    5090127753,
+    1731365899,
 )
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2122770443").split()}
@@ -162,9 +160,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
-    "UPSTREAM_REPO_URL", "https://github.com/Skyzu/skyzu-userbot"
+    "UPSTREAM_REPO_URL", "https://github.com/Yansensad/yansen-userbot"
 )
-UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Skyzuu-Userbot")
+UPSTREAM_REPO_BRANCH = os.environ.get("UPSTREAM_REPO_BRANCH", "Yansen-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -236,7 +234,7 @@ YOUTUBE_API_KEY = (
 )
 
 # Untuk Perintah .skyalive
-SKYZU_TEKS_KUSTOM = os.environ.get("SKYZU_TEKS_KUSTOM", "I'am Using Skyzu-Userbot⚡")
+SKYZU_TEKS_KUSTOM = os.environ.get("YANSEN_TEKS_KUSTOM", "I'am Using Yansen-Userbot⚡")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
@@ -258,7 +256,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN") or "o_1fpd9299vp"
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Skyzu-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Yansen-Userbot")
 
 # Bot Version
 BOT_VER = os.environ.get("BOT_VER", "7.0")
@@ -393,7 +391,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "skyzu-userbot"
+    session = "yansen-userbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -437,7 +435,7 @@ async def check_botlog_chatid():
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
     message = (
-        f"**Skyzu-Userbot v{BOT_VER} is back up and running!**\n\n"
+        f"**Yansen-Userbot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {DEFAULTUSER}"
@@ -546,7 +544,7 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 current_page_number = int(looters)
                 buttons = paginate_help(current_page_number, dugmeler, "helpme")
-                text = f"**✨ Skyzu-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                text = f"**✨ Yansen-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
                     file=skyzulogo,
@@ -633,21 +631,21 @@ with bot:
                 result = builder.photo(
                     file=skyzulogo,
                     link_preview=False,
-                    text=f"**✨ Skyzu-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    text=f"**✨ Yansen-Userbot ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Skyzu - Userbot",
-                    url="https://t.me/SkyzuSupport",
+                    description="Repository Yansen - Userbot",
+                    url="https://t.me/pantekyks",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text="**Skyzu-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Skyzu-Ex](https://t.me/Skyzuex)\n✣ **sᴜᴘᴘᴏʀᴛ :** @SkyzuSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Skyzu-Userbot](https://github.com/Skyzu/Skyzu-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Yansen-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Skyzu-Ex](https://t.me/Skyzuex)\n✣ **sᴜᴘᴘᴏʀᴛ :** @SkyzuSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Yansen-Userbot](https://github.com/Yansensad/yansen-userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SkyzuSupport"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/pantekyks"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/Skyzu/skyzu-userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/Yansensad/yansen-userbot"
                             ),
                         ],
                     ],
@@ -687,16 +685,16 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ Skyzu-Userbot ✨",
-                    description="Skyzu - Userbot | Telethon",
-                    url="https://t.me/ProjectSkyzu",
+                    title="✨ Yansen-Userbot ✨",
+                    description="Yansen - Userbot | Telethon",
+                    url="https://t.me/trashme2",
                     thumb=InputWebDocument(INLINE_PIC, 0, "image/jpeg", []),
-                    text=f"**Skyzu-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ:** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @ProjectSkyzu\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Yansen-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ:** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @trashme2\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/SkyzuSupport"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/pantekyks"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/Skyzu/skyzu-userbot"
+                                "ʀᴇᴘᴏ", "https://github.com/Yansensad/yansen-userbot"
                             ),
                         ],
                     ],
