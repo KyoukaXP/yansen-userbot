@@ -5,10 +5,10 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="logo(?: |$)(.*)")
+@lepin_cmd(pattern="logo(?: |$)(.*)")
 async def _(event):
     if event.fwd_from:
         return
@@ -18,7 +18,7 @@ async def _(event):
         await event.edit("`Give a name too!`")
     else:
         await event.edit("`Processing`")
-    chat = "@Nastymusiicboy"
+    chat = "@levintapibot"
     async with event.client.conversation(chat) as conv:
         try:
             msg = await conv.send_message(f"/logo {text}")
@@ -28,7 +28,7 @@ async def _(event):
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.edit(
-                "**Error: Mohon Buka Blokir** @Nastymusiicbot **Dan Coba Lagi!**"
+                "**Error: Mohon Buka Blokir** @levintapibot **Dan Coba Lagi!**"
             )
             return
         await asyncio.sleep(0.5)
