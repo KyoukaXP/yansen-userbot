@@ -11,10 +11,10 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="sspam(?: |$)(.*)")
+@lepin_cmd(pattern="sspam(?: |$)(.*)")
 async def stickerpack_spam(event):
     if event.fwd_from:
         return
