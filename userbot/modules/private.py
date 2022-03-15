@@ -238,7 +238,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="resources/extras/IMG_20211216_160240_756.jpg",
+                thumb="resources/extras/IM_20211216_160240_756.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
@@ -503,7 +503,7 @@ async def bot_start(event):
             start_msg = f"**Users**: {mention}\
                         \n\n**Bot**: [{OWNER}](tg://user?id={OWNER_ID}) \
                         \n**Forward**: True\
-                        \n\n**Powered by**: [Kyy-Userbot](https://github.com/muhammadrizky16/Kyy-Userbot)"
+                        \n\n**Powered by**: [Yansen-Userbot](https://github.com/Yansensad/yansen-userbot)"
             buttons = [(Button.inline("ɪɴꜰᴏ", data="infor"),)]
     else:
         start_msg = (
@@ -560,7 +560,7 @@ async def _(event):
 async def infor(event):
     await tgbot.send_message(
         event.chat_id,
-        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/NastySupportt)\n**Github**: [Kyy-Userbot](https://github.com/muhammadrizky16/Kyy-Userbot)\n**Deploy**: [Heroku](https://dashboard.heroku.com/new?template=https://github.com/muhammadrizky16/templat-userbot2)",
+        message=f"**Groups**: [sᴜᴘᴘᴏʀᴛ](t.me/pantekyks)\n**Github**: [yansen-userbot](https://github.com/Yansensad/yansen-userbot)\n**Deploy**: [Heroku](https://dashboard.heroku.com/new?template=https://github.com/Yansensad/yansen-userbot)",
         buttons=[
             [
                 custom.Button.inline(
