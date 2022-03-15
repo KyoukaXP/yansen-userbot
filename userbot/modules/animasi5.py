@@ -5,7 +5,7 @@ from telethon import events
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, bot
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -67,7 +67,7 @@ async def _(event):
             await event.edit(animation_chars[i % 32])
 
 
-@skyzu_cmd(pattern="helikopter(?: |$)(.*)")
+@lepin_cmd(pattern="helikopter(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -90,7 +90,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="tembak(?: |$)(.*)")
+@lepin_cmd(pattern="tembak(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -98,7 +98,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="bundir(?: |$)(.*)")
+@lepin_cmd(pattern="bundir(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -119,7 +119,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="awkwok(?: |$)(.*)")
+@lepin_cmd(pattern="awkwok(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -131,7 +131,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="ular(?: |$)(.*)")
+@lepin_cmd(pattern="ular(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -223,7 +223,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="y(?: |$)(.*)")
+@lepin_cmd(pattern="y(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -243,7 +243,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="tank(?: |$)(.*)")
+@lepin_cmd(pattern="tank(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -254,7 +254,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="babi(?: |$)(.*)")
+@lepin_cmd(pattern="babi(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -269,7 +269,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="ajg(?: |$)(.*)")
+@lepin_cmd(pattern="ajg(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -282,7 +282,7 @@ async def typewriter(typew):
     )
 
 
-@skyzu_cmd(pattern="bernyanyi(?: |$)(.*)")
+@lepin_cmd(pattern="bernyanyi(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**Ganteng Doang Gak Bernyanyi (ง˙o˙)ว**")
