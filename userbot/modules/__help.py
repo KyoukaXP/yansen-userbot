@@ -20,13 +20,13 @@
 
 
 from userbot import BOT_USERNAME, CMD_HELP, bot, user
-from userbot.utils import edit_delete, edit_or_reply, skyzu_cmd
+from userbot.utils import edit_delete, edit_or_reply, lepin_cmd
 
 DEFAULTUSER = user.first_name
 CUSTOM_HELP_EMOJI = "✨"
 
 
-@skyzu_cmd(pattern="help ?(.*)")
+@lepin_cmd(pattern="help ?(.*)")
 async def cmd_list(event):
     args = event.pattern_match.group(1).lower()
     if args:
@@ -35,14 +35,14 @@ async def cmd_list(event):
                 event,
                 f"**✘ Commands available in {args} ✘** \n\n"
                 + str(CMD_HELP[args])
-                + "\n\n**☞ @ProjectSkyzu**",
+                + "\n\n**☞ @trashme2**",
             )
         else:
             await edit_delete(event, f"**Module** `{args}` **Tidak tersedia!**")
     else:
         try:
             results = await bot.inline_query(  # pylint:disable=E0602
-                BOT_USERNAME, "@SkyzuUserbot"
+                BOT_USERNAME, "@YansenUserbot"
             )
             await results[0].click(
                 event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
