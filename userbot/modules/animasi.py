@@ -2,10 +2,10 @@ from time import sleep
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
-@skyzu_cmd(pattern="sadboy(?: |$)(.*)")
+@lepin_cmd(pattern="sadboy(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(2)
@@ -19,7 +19,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@skyzu_cmd(pattern="punten(?: |$)(.*)")
+@lepin_cmd(pattern="punten(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -37,7 +37,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@skyzu_cmd(pattern="pantau(?: |$)(.*)")
+@lepin_cmd(pattern="pantau(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
@@ -55,7 +55,7 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@skyzu_cmd(pattern="idiot(?: |$)(.*)")
+@lepin_cmd(pattern="idiot(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
