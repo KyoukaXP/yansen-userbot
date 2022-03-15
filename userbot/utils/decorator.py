@@ -17,10 +17,11 @@ from userbot import (
     SUDO_HANDLER,
     SUDO_USERS,
     bot,
+    tgbot,
 )
 
 
-def lepin_cmd(
+def skyzu_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
     disable_edited: bool = False,
@@ -43,25 +44,25 @@ def lepin_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global lepin_reg
+        global skyzu_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            lepin_reg = sudo_reg = re.compile(pattern)
+            skyzu_reg = sudo_reg = re.compile(pattern)
         else:
-            lepin_ = "\\" + CMD_HANDLER
+            skyzu_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            lepin_reg = re.compile(lepin_ + pattern)
+            skyzu_reg = re.compile(skyzu_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = lepin_ + command
+                cmd1 = skyzu_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (lepin_ + pattern)
+                    (skyzu_ + pattern)
                     .replace("$", "")
                     .replace("\\", "")
                     .replace("^", "")
@@ -80,10 +81,10 @@ def lepin_cmd(
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=lepin_reg)
+                func, events.MessageEdited(**args, outgoing=True, pattern=skyzu_reg)
             )
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=lepin_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=skyzu_reg)
         )
         if allow_sudo:
             if not disable_edited:
@@ -108,11 +109,37 @@ def lepin_cmd(
     return decorator
 
 
-def lepin_handler(
+def skyzu_handler(
     **args,
 ):
     def decorator(func):
         bot.add_event_handler(func, events.NewMessage(**args, incoming=True))
+        return func
+
+    return decorator
+
+
+def asst_cmd(**args):
+    pattern = args.get("pattern", None)
+    r_pattern = r"^[/!]"
+    if pattern is not None and not pattern.startswith("(?i)"):
+        args["pattern"] = "(?i)" + pattern
+    args["pattern"] = pattern.replace("^/", r_pattern, 1)
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.NewMessage(**args))
+        return func
+
+    return decorator
+
+
+def callback(**args):
+    """Assistant's callback decorator"""
+
+    def decorator(func):
+        if tgbot:
+            tgbot.add_event_handler(func, events.CallbackQuery(**args))
         return func
 
     return decorator
