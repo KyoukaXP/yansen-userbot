@@ -33,7 +33,7 @@ from userbot import BOTLOG, BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.events import register
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "**Gambar Terlalu Kecil**"
@@ -79,7 +79,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@skyzu_cmd(pattern="setgpic$")
+@lepin_cmd(pattern="setgpic$")
 async def set_group_photo(gpic):
     if not gpic.is_group:
         await gpic.edit("`Mohon Lakukan Perintah Ini Di Grup.`")
@@ -115,7 +115,7 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@skyzu_cmd(pattern="promote(?: |$)(.*)")
+@lepin_cmd(pattern="promote(?: |$)(.*)")
 async def promote(promt):
     # Get targeted chat
     chat = await promt.get_chat()
@@ -165,7 +165,7 @@ async def promote(promt):
         )
 
 
-@skyzu_cmd(pattern="demote(?: |$)(.*)")
+@lepin_cmd(pattern="demote(?: |$)(.*)")
 async def demote(dmod):
     # Admin right check
     chat = await dmod.get_chat()
@@ -214,7 +214,7 @@ async def demote(dmod):
         )
 
 
-@skyzu_cmd(pattern="ban(?: |$)(.*)")
+@lepin_cmd(pattern="ban(?: |$)(.*)")
 async def ban(bon):
     # Here laying the sanity check
     chat = await bon.get_chat()
@@ -267,7 +267,7 @@ async def ban(bon):
         )
 
 
-@skyzu_cmd(pattern="unban(?: |$)(.*)")
+@lepin_cmd(pattern="unban(?: |$)(.*)")
 async def nothanos(unbon):
     # Here laying the sanity check
     chat = await unbon.get_chat()
@@ -303,7 +303,7 @@ async def nothanos(unbon):
         await unbon.edit("**Sepertinya Terjadi Kesalahan!**")
 
 
-@skyzu_cmd(pattern="mute(?: |$)(.*)")
+@lepin_cmd(pattern="mute(?: |$)(.*)")
 async def spider(spdr):
     # Check if the function running under SQL mode
     try:
@@ -357,7 +357,7 @@ async def spider(spdr):
             return await spdr.edit("**Terjadi Kesalahan!**")
 
 
-@skyzu_cmd(pattern="unmute(?: |$)(.*)")
+@lepin_cmd(pattern="unmute(?: |$)(.*)")
 async def unmoot(unmot):
     # Admin or creator check
     chat = await unmot.get_chat()
@@ -435,7 +435,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@skyzu_cmd(pattern="ungmute(?: |$)(.*)")
+@lepin_cmd(pattern="ungmute(?: |$)(.*)")
 async def ungmoot(un_gmute):
     # Admin or creator check
     chat = await un_gmute.get_chat()
@@ -477,7 +477,7 @@ async def ungmoot(un_gmute):
             )
 
 
-@skyzu_cmd(pattern="gmute(?: |$)(.*)")
+@lepin_cmd(pattern="gmute(?: |$)(.*)")
 async def gspider(gspdr):
     # Admin or creator check
     chat = await gspdr.get_chat()
@@ -517,7 +517,7 @@ async def gspider(gspdr):
             )
 
 
-@skyzu_cmd(pattern="zombies(?: |$)(.*)")
+@lepin_cmd(pattern="zombies(?: |$)(.*)")
 async def rm_deletedacc(show):
 
     con = show.pattern_match.group(1).lower()
