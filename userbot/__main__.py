@@ -8,8 +8,6 @@
 import sys
 from importlib import import_module
 
-from telethon.tl.functions.channels import InviteToChannelRequest as Addbot
-
 from userbot import (
     ALIVE_NAME,
     BOT_TOKEN,
@@ -30,10 +28,8 @@ try:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
     call_py.start()
-    LOGS.info(
-        f"Jika Reponya Bermasalah Silahkan Lapor Ke @lepinex. [ BOT TELAH DIAKTIFKAN! ]"
-    )
-    LOGS.info(f"🍻Yansen-Userbot Telah Di Aktifkan {BOT_VER}")
+    user = bot.get_me()
+    LOGS.info(f"⚡Yansen-Userbot⚡ ⚙️ V{BOT_VER} [ TELAH DIAKTIFKAN! ]")
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
