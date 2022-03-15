@@ -10,7 +10,7 @@ from telethon.tl.types import MessageEntityMentionName
 from userbot import ALIVE_NAME
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import skyzu_cmd
+from userbot.utils import lepin_cmd
 
 
 async def get_user_from_event(event):
@@ -61,7 +61,7 @@ except BaseException:
     client2 = client3 = None
 
 
-@skyzu_cmd(pattern="gkick(?: |$)(.*)")
+@lepin_cmd(pattern="gkick(?: |$)(.*)")
 async def gspide(rk):
     lazy = rk
     sender = await lazy.get_sender()
