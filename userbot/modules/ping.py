@@ -183,9 +183,9 @@ async def _(ping):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
     await edit_or_reply(ping, "**𖣘**")
-    await pin.edit("**𖣘𖣘**")
-    await pin.edit("**𖣘𖣘𖣘**")
-    await pin.edit("**◕‿- PONG!**")
+    await sky.edit("**𖣘𖣘**")
+    await sky.edit("**𖣘𖣘𖣘**")
+    await sky.edit("**◕‿- PONG!**")
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
