@@ -134,7 +134,7 @@ PMPERMIT_TEXT = os.environ.get("PMPERMIT_TEXT", None)
 # Custom Pmpermit pic
 PMPERMIT_PIC = (
     os.environ.get("PMPERMIT_PIC")
-    or "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg"
+    or "https://telegra.ph/file/d40d98dce09baddfbc4e6.jpg"
 )
 
 # Bleep Blop, this is a bot ;)
@@ -259,7 +259,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN") or "o_1fpd9299vp"
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "Yansen-Userbot")
 
 # Bot Version
-BOT_VER = os.environ.get("BOT_VER", "7.0")
+BOT_VER = os.environ.get("BOT_VER", "8.0")
 
 # Default .alive Username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -269,23 +269,23 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = (
-    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/fd08937c4ae6cb1303731.jpg"
+    os.environ.get("ALIVE_LOGO") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.jpg"
 )
 # Default .helpme Logo
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/831065146253ade66e36b.jpg"
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.jpg
 )
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "⚡"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🔥"
 
 # Picture For VCPLUGIN
 PLAY_PIC = (
-    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.png"
 )
 
 QUEUE_PIC = (
-    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.png"
 )
 
 
