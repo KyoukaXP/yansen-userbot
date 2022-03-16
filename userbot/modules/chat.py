@@ -134,7 +134,7 @@ async def kickme(leave):
     await leave.client.kick_participant(leave.chat_id, "me")
 
 
-@lepim_cmd(pattern="unmutechat$")
+@lepin_cmd(pattern="unmutechat$")
 async def unmute_chat(unm_e):
     """For .unmutechat command, unmute a muted chat."""
     try:
