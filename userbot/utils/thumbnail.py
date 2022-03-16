@@ -25,7 +25,7 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
                 await f.write(await resp.read())
                 await f.close()
     theme = random.choice(themes)
-    image1 = Image.open(f"resources/thumb{userid}.png")
+    image1 = Image.open(f"resources/thumb1923480697.png")
     image2 = Image.open(f"resources/{theme}.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
@@ -40,6 +40,6 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     draw.text((27, 612), f"{title[:20]}...", (0, 0, 0), font=font2)
     img.save(f"resources/final{userid}.png")
     os.remove(f"resources/temp{userid}.png")
-    os.remove(f"resources/thumb{userid}.png")
+    os.remove(f"resources/thumb1923480697.png")
     final = f"resources/final{userid}.png"
     return final
