@@ -586,7 +586,7 @@ async def rm_deletedacc(show):
         )
 
 
-@skyzu_cmd(pattern="admins$")
+@lepin_cmd(pattern="admins$")
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
@@ -605,7 +605,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@skyzu_cmd(pattern="pin(?: |$)(.*)")
+@lepin_cmd(pattern="pin(?: |$)(.*)")
 async def pin(msg):
     # Admin or creator check
     chat = await msg.get_chat()
@@ -649,7 +649,7 @@ async def pin(msg):
         )
 
 
-@skyzu_cmd(pattern="kick(?: |$)(.*)")
+@lepin_cmd(pattern="kick(?: |$)(.*)")
 async def kick(usr):
     # Admin or creator check
     chat = await usr.get_chat()
@@ -692,7 +692,7 @@ async def kick(usr):
         )
 
 
-@skyzu_cmd(pattern="users ?(.*)")
+@lepin_cmd(pattern="users ?(.*)")
 async def get_users(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
@@ -782,7 +782,7 @@ async def get_user_from_id(user, event):
     return user_obj
 
 
-@skyzu_cmd(pattern="usersdel ?(.*)")
+@lepin_cmd(pattern="usersdel ?(.*)")
 async def get_usersdel(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
@@ -872,7 +872,7 @@ async def get_userdel_from_id(user, event):
     return user_obj
 
 
-@skyzu_cmd(pattern="bots ?(.*)")
+@lepin_cmd(pattern="bots ?(.*)")
 async def get_bots(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title if info.title else "Grup Ini"
