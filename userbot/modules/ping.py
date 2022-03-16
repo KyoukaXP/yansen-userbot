@@ -24,7 +24,7 @@ absen = [
     "**Hadir ganteng** 🥵",
     "**Hadir bro** 😎",
     "**Hadir kak** 😉",
-    "**Hadir bang sky** 😁",
+    "**Hadir bang lepin** 😁",
     "**Hadir kak maap telat** 🥺",
 ]
 
@@ -189,7 +189,7 @@ async def _(ping):
     end = datetime.now()
     duration = (end - start).microseconds / 1000
     user = await ping.client.get_me()
-    await sky.edit(
+    await ping.edit(
         f"**PONG!!🏓**\n"
         f"• **Pinger** - "
         f"`%sms` \n"
