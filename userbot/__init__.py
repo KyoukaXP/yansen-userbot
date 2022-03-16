@@ -107,7 +107,7 @@ DEVS = (
     1731365899,
 )
 
-SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2122770443").split()}
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "2004395661").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
 # Telegram App KEY and HASH
@@ -273,7 +273,7 @@ ALIVE_LOGO = (
 )
 # Default .helpme Logo
 INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.jpg
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/d40d98dce09baddfbc4e6.jpg"
 )
 
 # Default emoji help
