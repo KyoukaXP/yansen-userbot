@@ -238,7 +238,7 @@ async def users(event):
                 event.chat_id,
                 fileuser,
                 force_document=True,
-                thumb="resources/extras/IM_20211216_160240_756.jpg",
+                thumb="resource/0d1b998b2e6717231ac5d61820c91ad8.jpg",
                 caption="**Total Pengguna Di Bot anda.**",
                 allow_cache=False,
                 buttons=[
