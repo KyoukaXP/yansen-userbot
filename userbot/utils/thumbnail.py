@@ -24,7 +24,7 @@ async def gen_thumb(thumbnail, title, ctitle):
                 f = await aiofiles.open(f"resources/thumb1923480697.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-    theme = random.choice(themes)
+    random.choice(themes)
     image1 = Image.open(f"resources/thumb1923480697.png")
     image2 = Image.open(f"resources/thumb1923480697.png")
     image3 = changeImageSize(1280, 720, image1)
